@@ -7,20 +7,49 @@
 <div class="login-container">
 
   <div class="form-wrapper">
-    <form action="/signup" method="POST" id="login-form">
 
-        <h2 class="welcome-message">Nice to see you here!</h2>
+
+    <!-- <form action="/login" method="POST">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+      </div>
+      <div>
+        <input type="submit" value="Log In">
+      </div>
+    </form> -->
+
+
+
+
+    <h2 class="welcome-message">Nice to see you here!</h2>
+
+    <form action="/login" method="POST" id="login-form">
+
         <div class="form-group">
-          <input type="email" class="basic-form" name="username" placeholder="myemail@email.com">
+          <input type="text" class="basic-form" name="username" placeholder="myemail@email.com">
           <input type="password" class="basic-form" name="password" placeholder="password">
         </div>
-        <button type="button" class="send-button">Login</button>
+
+        <% if (typeof message !== "undefined") { %>
+          <div class="error-message"><%= message %></div>
+        <% } %>
+
+        <button type="submit" class="send-button">Login</button>
+
+
 
       <p class="account-message">
         Do you still don't have an account?
         <a href="/signup">Signup</a>
       </p>
     </form>
+
+
   </div>
 
 </div>
