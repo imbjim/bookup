@@ -1,7 +1,7 @@
 
 <nav class="navbar">
   <div class="navbar-wrapper">
-    <h3 class="brand">bookup</h3>
+    <h3 class="brand">Edit profile</h3>
   </div>
 </nav>
 <div class="login-container">
@@ -30,7 +30,7 @@
 
 
     <h2 class="welcome-message">Share your books and meet other readers</h2>
-    <form action="/profile" method="POST" id="profile-form">
+    <form action="/profile/<%= user._id %>" method="POST" id="profile-form">
 
         <div class="form-group">
           <label for="username">Username</label>
