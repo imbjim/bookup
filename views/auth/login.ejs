@@ -1,13 +1,32 @@
-<form action="/login" method="POST">
-  <div>
-    <label for="username">email:</label>
-    <input type="text" name="username">
+
+<nav class="navbar">
+  <div class="navbar-wrapper">
+    <h3 class="brand">bookup</h3>
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password">
+</nav>
+<div class="login-container">
+
+  <div class="form-wrapper">
+    <form action="/signup" method="POST" id="login-form">
+
+        <h2 class="welcome-message">Nice to see you here!</h2>
+        <div class="form-group">
+          <input type="email" class="basic-form" name="username" placeholder="myemail@email.com">
+          <input type="password" class="basic-form" name="password" placeholder="password">
+        </div>
+        <button type="button" class="send-button">Login</button>
+
+      <p class="account-message">
+        Do you still don't have an account?
+        <a href="/signup">Signup</a>
+      </p>
+    </form>
   </div>
-  <div>
-    <input type="submit" value="Log In">
+
+</div>
+<footer class="footer">
+  <div class="footer-wrapper">
+    <p class="footer-quote">“A book lying idle on a shelf is wasted ammunition. Like money, books must be kept in constant circulation... A book is not only a friend, it makes friends for you. When you have possessed a book with mind and spirit, you are enriched. But when you pass it on you are enriched threefold.”</p>
+    <p class="footer-quote-author">Henry Miller</p>
   </div>
-</form>
+</footer>
