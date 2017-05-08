@@ -8,8 +8,8 @@
 
 body {
   font-family: arial, sans-serif;
-  background: #eee;
-  background-image: url("../images/book-blur.jpg");
+  background: #fff;
+  /*background-image: url("../images/book-blur.jpg");*/
 }
 
 .navbar {
@@ -142,7 +142,7 @@ navbar-wrapper:after {
 
 .container {
   width: 90%;
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -180,6 +180,11 @@ navbar-wrapper:after {
   margin-bottom: 10px;
   border: 2px solid #eee;
   color: #7fc857;
+  display: block;
+  padding: 40px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .option-box:hover {
@@ -188,10 +193,6 @@ navbar-wrapper:after {
   cursor: pointer;
 }
 
-.option-box p {
-  padding: 25px;
-  text-align: center;
-}
 
 
 /*---------------LOGIN, SIGNUP AND HOME--------------*/
@@ -288,6 +289,7 @@ body {
 .profile-wrapper {
   width: 90%;
   margin-top: 20px;
+  position: relative;
 }
 
 .profile-wrapper:after {
@@ -297,11 +299,11 @@ body {
 }
 
 .profile-picture-wrapper {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background: rgba(255, 255, 255, 0.3);
   border: 2px solid #7fc857;
-  margin: 15px;
+  margin: 7px 7px 15px 15px;
   border-radius: 4px 4px 4px 4px;
   float: left;
   box-sizing: border-box;
@@ -313,12 +315,10 @@ body {
 }
 
 .profile-data-wrapper {
-  min-height: 150px;
-  width: 60%;
-  margin-top: 15px;
-  /*background: #eee;*/
-  padding: 20px 20px 20px 20px;
+  /*min-height: 150px;*/
+  padding: 0px 10px 0px 7px;
   border-radius: 4px 4px 4px 4px;
+  margin-top: 5px;
   box-sizing: border-box;
   float: left;
 }
@@ -329,33 +329,29 @@ body {
 
 .profile-data-wrapper li {
   width: 100%;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 14px;
+  margin-top: 5px;
   padding-bottom: 5px;
-  border-bottom: 1px dashed #aaa;
+  /*border-bottom: 1px dashed #aaa;*/
 }
 
 .edit-profile-button {
   height: 30px;
   widht: 100px;
   background: #7fc857;
-  border: 2px solid #fff;
   padding: 7px;
   border-radius: 4px 4px 4px 4px;
   color: #fff;
   text-decoration: none;
-  margin-top: 100px;
-  margin-left: 50px;
-  /*margin-bottom: 20px;*/
+  margin-top: 10px;
+  margin-left: 25px;
   font-size: 14px;
   box-sizing: border-box;
   cursor: pointer;
 }
 
 .edit-profile-button:hover {
-  background: none;
-  color: #7fc857;
-  border: 2px solid #7fc857;
+  background: #96d971;
 }
 
 /*---------------MY BOOKS INSIDE PROFILE---------------*/
@@ -368,13 +364,13 @@ body {
 }
 
 .mybooks {
-  width: 96%;
+  width: 150px;
   height: auto;
-  margin: 0 auto;
-  background: rgba(240, 240, 240, 0.6);
+  margin: 10px 15px;;
+  background: #eee;
   border-radius: 6px 6px 6px 6px;
-  padding: 20px;
   box-sizing: border-box;
+  float: left;
 }
 
 .mybooks:after {
@@ -383,30 +379,54 @@ body {
   clear: both;
 }
 
+.new {
+  height: 270px;
+}
+
 .cover-wrapper {
-  width: 100px;
-  height: 100px;
-  background: #eee;
+  width: 100%;
+  height: 200px;
+  background: #777;
   float: left;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.cover {
+  width: 98%;
+  margin: 0 auto;
+
 }
 
 .book-list-info ul {
   list-style-type: none;
-  margin-top: 5px;
-  margin-left: 15px;
-  padding-left: 20px;
-  float: left;
+  text-align: center;
 }
 
 .book-list-info li {
   width: 100%;
-  font-size: 16px;
-  margin-bottom: 5px;
-  /*border-bottom: 1px dashed #aaa;*/
+  font-size: 13px;
+  margin-bottom: 3px;
 }
 
-.book-list-info li span {
-  margin-right: 20px;
+
+.book-options {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 6px;
+  padding-bottom: 7px;
+}
+
+.book-options a {
+  text-decoration: none;
+}
+
+.book-options a:first-child {
+  margin-right: 10px;
+}
+
+.book-options a:last-child {
+  color: rgb(171, 4, 34);
 }
 
 /*--------------MEDIA QUERIES------------*/
@@ -420,6 +440,25 @@ body {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
+  }
+
+  .profile-data-wrapper {
+    padding: 10px 10px 0px 7px;
+  }
+
+  .profile-data-wrapper li {
+    font-size: 15px;
+  }
+
+  .profile-picture-wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 15px 15px 20px 15px;
+    padding: 5px 5px 5px 5px;
+  }
+
+  .edit-profile-button {
+    margin-left: 50px;
   }
 }
 
