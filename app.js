@@ -1,3 +1,5 @@
+/*jshint esversion: 6*/
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -8,7 +10,6 @@ const session       = require("express-session");
 const bcrypt        = require("bcrypt");
 const passport      = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const expressLayouts = require('express-ejs-layouts');
 
 const User = require('./models/user');
 
@@ -25,8 +26,6 @@ mongoose.connect("mongodb://localhost:27017/bookup");
 var app = express();
 
 // view engine setup
-app.use(expressLayouts);
-app.set('layout', 'layouts/main-layout');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -45,7 +44,7 @@ app.use(session({
 }));
 
 passport.serializeUser((user, cb) => {
-  cb(null, user);//modified by Imre to make the profile page work(previously user.id)
+  cb(null, user.id);
 });
 
 passport.deserializeUser((id, cb) => {

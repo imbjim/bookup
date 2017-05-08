@@ -50,30 +50,12 @@ router.post('/signup', (req, res, next) => {
       }
     });
   });
-})
-
-
-router.get("/profile", function(req, res, next){//added by Imre
-  let user = req.session.passport.user
-  res.render('auth/profile', { user: user})
-})
-
-router.post('/profile', (req, res, next) => { // added by Imre
-  const userInfo = {
-    username: req.body.username,
-    email: req.body.email,
-    phone: req.body.phone,
-    city: req.body.city,
-    province: req.body.province,
-    country: req.body.country,
-    age: req.body.age,
-    gender: req.body.gender
-  };});
+});
 
 
 router.get('/login', (req, res, next) => {
-  res.render('auth/login')
-})
+  res.render('auth/login');
+});
 
 router.post('/login', passport.authenticate("local", {
   successRedirect: "/",
@@ -87,14 +69,28 @@ router.get('/logout', (req, res, next) => {
   res.redirect("/login");
 });
 
-// router.get('/:id', (req, res, next) => {
-//   console.log("this is the req session!!!!: ",req.session)
-//   User.findById(req.params.id, (err, user) => {
-//     if (err) { next(err); }
-//
-//     res.render('auth/profile', { user: user} );
-//   });
-// });
-//
+
+router.get("/profile", function(req, res, next){//added by Imre
+  let user = req.user;
+  console.log(req.user)
+  res.render('auth/profile', { user: user});
+});
+
+router.post('/profile', (req, res, next) => {// added by Imre
+  const userInfo = {
+    username: req.body.username,
+    email: req.body.email,
+    phone: req.body.phone,
+    city: req.body.city,
+    province: req.body.province,
+    country: req.body.country,
+    age: req.body.age,
+    gender: req.body.gender
+  };
+  User.findByIdAndUpdate(req.user._id, userInfo, (err, user)=>{
+    res.redirect('/profile');
+  })
+});
+
 
 module.exports = router;
