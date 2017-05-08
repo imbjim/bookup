@@ -13,6 +13,9 @@ router.get('/signup', function(req, res, next) {
 });
 
 router.post('/signup', (req, res, next) => {
+
+  const name = req.body.name; //added
+  const city = req.body.city; //added
   const username = req.body.username;
   const password = req.body.password;
 
@@ -32,7 +35,9 @@ router.post('/signup', (req, res, next) => {
 
     const newUser = User({
       username: username,
-      password: hashPass
+      password: hashPass,
+      name: name, //added
+      city: city //added
     });
 
     newUser.save((err) => {

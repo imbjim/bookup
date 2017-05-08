@@ -1,8 +1,331 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font-size: 100%;
+
 }
 
-a {
-  color: #00B7FF;
+body {
+  font-family: arial, sans-serif;
+  background: #eee;
+  background-image: url("../images/book-blur.jpg");
 }
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  margin: 0 0 20px 0;
+  background: #282828;
+  /*border-bottom: 4px solid #474646;*/
+  /*background: #7fc857;
+  border-bottom: 4px solid #96d971;*/
+}
+
+.navbar-wrapper {
+  width: 100%;
+}
+
+navbar-wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.brand {
+  width: 100px;
+  margin: 4px 0 0 15px;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  font-size: 25px;
+  float: left;
+}
+
+.navbar-profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 10px 10px 0 0;
+  background: #ddd;
+  float: right;
+}
+
+.navbar-button {
+  float: right;
+  width: 70px;
+  height: 60px;;
+  font-size: 14px;
+  color: #fff;
+  background: #282828;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  cursor: pointer;
+}
+
+.nabvar-button-right {
+  margin-right: 20px;
+  border-left: none;
+}
+
+.navbar-button:hover {
+  background: #999;
+  cursor: pointer;
+}
+
+.login-container {
+  height: 400px;
+  margin: 0 auto;
+
+}
+
+.welcome-message {
+  width: 320px;
+  margin: 60px auto 40px auto;
+  text-align: center;
+  font-size: 25px
+}
+
+.home-message {
+  width: 350px;
+  margin: 40px auto 30px auto;
+  text-align: center;
+  font-size: 22px
+}
+
+.basic-form {
+  width: 260px;
+  height: 45px;
+  display: block;
+  margin: 10px auto 0 auto;
+  padding: 0 10px 0 10px;
+  border-style: solid;
+  border: 2px solid #eee;
+  border-radius: 3px 3px 3px 3px;
+  background: #fff;
+  /*background: rgba(255, 255, 255, 0.8);*/
+  font-size: 14px;
+  box-sizing: border-box;
+  outline-color: #7fc857;
+  outline-width: 2px;
+}
+
+.send-button {
+  width: 120px;
+  height: 35px;
+  margin: 25px auto;
+  display: block;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  background: #7fc857;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background: #96d971;
+}
+
+.account-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/*home styles*/
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.messages-home-box {
+  height: 50px;
+  width: 100%;
+  margin: 20px auto;
+  background: #495867;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
+.messages-home-box:hover {
+  background: #616f7e;
+  cursor: pointer;
+}
+
+.messages-home-box p {
+  padding: 15px;
+  text-align: center;
+  color: #eee;
+  font-size: 19px;
+}
+
+.option-container {
+  width: 100%;
+  margin: 0 auto 20px auto;
+}
+
+.option-box {
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 10px;
+  border: 2px solid #eee;
+  color: #7fc857;
+}
+
+.option-box:hover {
+  /*background: #ecf4e9;*/
+  border: 2px solid #7fc857;
+  cursor: pointer;
+}
+
+.option-box p {
+  padding: 25px;
+  text-align: center;
+}
+
+
+/*---------------LOGIN, SIGNUP AND HOME--------------*/
+/*---------------------UNTIL HERE--------------*/
+
+
+/*------------------------HOME--------------*/
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: table;
+}
+/*.footer, html, body {
+  height: 100%;
+}*/
+
+.footer {
+  visibility: hidden;
+  margin-top: 200px;
+  /*bottom: 70px;*/
+  width: 100%;
+  /*height: 140px;*/
+  color: #aaa;
+  background: #282828;
+  /*display: flex;
+  flex-direction: column;*/
+  display: table-row;
+}
+
+.footer-wrapper {
+  max-width: 700px;
+  width: 70%;
+  margin: 30px auto;
+  flex-grow: 1;
+}
+
+.footer-quote {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.footer-quote-author {
+  float: right;
+  margin-right: 40px;
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 14px;
+}
+
+
+/*---------------------NEW ACCOUNT-------------------*/
+
+.new-account-header {
+  width: 320px;
+  margin: 30px auto 20px auto;
+  text-align: center;
+  font-size: 20px
+}
+
+.new-account-subheader {
+  width: 320px;
+  margin: 10px auto 15px auto;
+  text-align: center;
+  font-size: 15px
+}
+
+/*----------------------NEW BOOK-------------------*/
+
+.description-form {
+  height: 80px;
+  width: 260px;
+  margin: 10px auto 0 auto;
+  display: block;
+  padding: 5px 10px 5px 10px;
+  border-style: solid;
+  border: 2px solid #eee;
+  border-radius: 3px 3px 3px 3px;
+  background: #fff;
+  /*background: rgba(255, 255, 255, 0.8);*/
+  font-size: 14px;
+  box-sizing: border-box;
+  outline-color: #7fc857;
+  outline-width: 2px;
+  color: #666;
+  resize: none;
+}
+
+/*--------------MEDIA QUERIES------------*/
+
+@media (min-width: 500px) {
+  .footer {
+    visibility: visible;
+  }
+
+  .navbar-wrapper {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+colors
+#F75C03
+#EDA20B
+#F2C01D
+#00A6ED
+#3066BE
+
+
+#E63946
+#F1FAEE
+#A8DADC
+#457B9D
+#1D3557
+
+#1D3557
+#FDE74C
+#9BC53D
+#E55934
+#FA7921
+
+#495867
+#577399
+#BDD5EA
+#F7F7FF
+#FE5F55
+
+#7fc857
+#96d971
+#504136
+#A49E8D
+#2E2E2E
+#51483E
+#1E140D
+#342725
