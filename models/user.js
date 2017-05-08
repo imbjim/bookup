@@ -11,7 +11,9 @@ const userSchema = new Schema({
   province: String,// added by Imre
   country: String,// added by Imre
   age: Number,// added by Imre
-  gender: String// added by Imre
+  gender: String,// added by Imre
+  picture: String,// added by Imre
+  books: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
