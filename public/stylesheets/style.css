@@ -63,6 +63,7 @@ navbar-wrapper:after {
   border-top: none;
   border-bottom: none;
   cursor: pointer;
+  outline: none;
 }
 
 .nabvar-button-right {
