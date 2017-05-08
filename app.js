@@ -45,7 +45,7 @@ app.use(session({
 }));
 
 passport.serializeUser((user, cb) => {
-  cb(null, user.id);
+  cb(null, user);//modified by Imre to make the profile page work(previously user.id)
 });
 
 passport.deserializeUser((id, cb) => {

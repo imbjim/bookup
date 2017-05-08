@@ -1,3 +1,5 @@
+/*jshint esversion: 6*/
+
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
@@ -9,7 +11,7 @@ const User = require('../models/user');
 
 /* GET users listing. */
 router.get('/signup', function(req, res, next) {
-  res.render('auth/signup')
+  res.render('auth/signup');
 });
 
 router.post('/signup', (req, res, next) => {
@@ -50,6 +52,25 @@ router.post('/signup', (req, res, next) => {
   });
 })
 
+
+router.get("/profile", function(req, res, next){//added by Imre
+  let user = req.session.passport.user
+  res.render('auth/profile', { user: user})
+})
+
+router.post('/profile', (req, res, next) => { // added by Imre
+  const userInfo = {
+    username: req.body.username,
+    email: req.body.email,
+    phone: req.body.phone,
+    city: req.body.city,
+    province: req.body.province,
+    country: req.body.country,
+    age: req.body.age,
+    gender: req.body.gender
+  };});
+
+
 router.get('/login', (req, res, next) => {
   res.render('auth/login')
 })
@@ -59,11 +80,21 @@ router.post('/login', passport.authenticate("local", {
   failureRedirect: "/login",
   failureFlash: false,
   passReqToCallback: true
-}))
+}));
 
 router.get('/logout', (req, res, next) => {
   req.logout();
   res.redirect("/login");
-})
+});
+
+// router.get('/:id', (req, res, next) => {
+//   console.log("this is the req session!!!!: ",req.session)
+//   User.findById(req.params.id, (err, user) => {
+//     if (err) { next(err); }
+//
+//     res.render('auth/profile', { user: user} );
+//   });
+// });
+//
 
 module.exports = router;
