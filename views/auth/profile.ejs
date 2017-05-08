@@ -1,0 +1,77 @@
+
+<nav class="navbar">
+  <div class="navbar-wrapper">
+    <h3 class="brand">bookup</h3>
+  </div>
+</nav>
+<div class="login-container">
+  <div class="form-wrapper">
+
+
+    <!-- <form action="/signup" method="POST" id="form-container">
+      <label for="username">Username</label>
+      <input id="username" type="text" name="username" placeholder="JonSnow">
+      <br><br>
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="Your password">
+
+      <% if (typeof message !== "undefined") { %>
+        <div class="error-message"><%= message %></div>
+      <% } %>
+      <br><br>
+
+      <button>Create account</button>
+
+      <p class="account-message">
+        Do you already have an account?
+        <a href="/login">Login</a>
+      </p>
+    </form> -->
+
+
+    <h2 class="welcome-message">Share your books and meet other readers</h2>
+    <form action="/profile/<%= user._id %>" method="POST" id="profile-form">
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" value="<%= user.username %>">
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" value="<%= user.email %>">
+
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" id="phone" value="<%= user.phone %>">
+
+          <label for="city">City</label>
+          <input type="text" name="city" id="city" value="<%= user.city %>">
+
+          <label for="province">Province</label>
+          <input type="text" name="province" id="province" value="<%= user.province %>">
+
+          <label for="country">Country</label>
+          <input type="text" name="country" id="country" value="<%= user.country %>">
+
+          <label for="age">Age</label>
+          <input type="number" name="age" id="age" value="<%= user.age %>">
+
+          <label for="gender">Gender</label>
+          <input type="text" name="gender" id="gender" value="<%= user.gender %>">
+
+          <label for="image-url">Image URL</label>
+          <input type="text" name="imageUrl" id="image-url" value="<%= product.imageUrl %>">
+
+          <button type="submit">Edit Profile/button>
+    </form>
+
+
+
+
+  </div>
+
+</div>
+<footer class="footer">
+  <div class="footer-wrapper">
+    <p class="footer-quote">“A book lying idle on a shelf is wasted ammunition. Like money, books must be kept in constant circulation... A book is not only a friend, it makes friends for you. When you have possessed a book with mind and spirit, you are enriched. But when you pass it on you are enriched threefold.”</p>
+    <p class="footer-quote-author">Henry Miller</p>
+  </div>
+</footer>
