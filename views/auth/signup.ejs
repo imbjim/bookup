@@ -6,20 +6,49 @@
 </nav>
 <div class="login-container">
   <div class="form-wrapper">
+
+
+    <!-- <form action="/signup" method="POST" id="form-container">
+      <label for="username">Username</label>
+      <input id="username" type="text" name="username" placeholder="JonSnow">
+      <br><br>
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="Your password">
+
+      <% if (typeof message !== "undefined") { %>
+        <div class="error-message"><%= message %></div>
+      <% } %>
+      <br><br>
+
+      <button>Create account</button>
+
+      <p class="account-message">
+        Do you already have an account?
+        <a href="/login">Login</a>
+      </p>
+    </form> -->
+
+
+    <h2 class="welcome-message">Share your books and meet other readers</h2>
     <form action="/signup" method="POST" id="login-form">
 
-        <h2 class="welcome-message">Share your books and meet other readers</h2>
         <div class="form-group">
-          <input type="email" class="basic-form" name="username" placeholder="myemail@email.com">
+          <input type="text" class="basic-form" name="name" placeholder="username">
+          <input type="text" class="basic-form" name="city" placeholder="city">
+          <input type="text" class="basic-form" name="username" placeholder="myemail@email.com">
           <input type="password" class="basic-form" name="password" placeholder="password">
         </div>
-        <button type="button" class="send-button">Signup</button>
+        <button type="submit" class="send-button">Signup</button>
 
       <p class="account-message">
         Do you already have an account?
         <a href="/login">Login</a>
       </p>
     </form>
+
+
+
+
   </div>
 
 </div>
