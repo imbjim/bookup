@@ -133,7 +133,7 @@ router.post('/allbooks', (req, res, next) => {// added by Imre
     if (err) {
       next(err);
     }
-    res.redirect('auth/allbooks');
+    res.redirect('/allbooks');
   });
 });
 
