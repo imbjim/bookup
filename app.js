@@ -10,6 +10,7 @@ const session       = require("express-session");
 const bcrypt        = require("bcrypt");
 const passport      = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+const expressLayouts = require('express-ejs-layouts');
 
 const User = require('./models/user');
 const Book = require('./models/book');//added by Imre
@@ -28,6 +29,8 @@ mongoose.connect("mongodb://localhost:27017/bookup");
 var app = express();
 
 // view engine setup
+app.use(expressLayouts);
+app.set('layout', 'layouts/main-layout');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -78,7 +81,7 @@ app.use(passport.session());
 
 app.use('/', index);
 app.use('/', auth);
-
+app.use('/', books);
 app.use('/users', users);
 
 

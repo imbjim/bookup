@@ -8,36 +8,18 @@
 
   <div class="form-wrapper">
 
-
-    <!-- <form action="/login" method="POST">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username">
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-      </div>
-      <div>
-        <input type="submit" value="Log In">
-      </div>
-    </form> -->
-
-
-
-
     <h2 class="welcome-message">Nice to see you here!</h2>
 
     <form action="/login" method="POST" id="login-form">
 
         <div class="form-group">
-          <input type="text" class="basic-form" name="username" placeholder="myemail@email.com">
+          <input type="text" class="basic-form" name="username" placeholder="@username">
           <input type="password" class="basic-form" name="password" placeholder="password">
         </div>
 
-        <% if (typeof message !== "undefined") { %>
+        <!-- <% if (typeof message !== "undefined") { %>
           <div class="error-message"><%= message %></div>
-        <% } %>
+        <% } %> -->
 
         <button type="submit" class="send-button">Login</button>
 
@@ -53,9 +35,10 @@
   </div>
 
 </div>
-<footer class="footer">
+
+<!-- <footer class="footer">
   <div class="footer-wrapper">
     <p class="footer-quote">“A book lying idle on a shelf is wasted ammunition. Like money, books must be kept in constant circulation... A book is not only a friend, it makes friends for you. When you have possessed a book with mind and spirit, you are enriched. But when you pass it on you are enriched threefold.”</p>
     <p class="footer-quote-author">Henry Miller</p>
   </div>
-</footer>
+</footer> -->
