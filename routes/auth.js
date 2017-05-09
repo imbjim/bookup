@@ -137,4 +137,12 @@ router.post('/allbooks', (req, res, next) => {// added by Imre
   });
 });
 
+router.get('/:book_id/delete', (req, res, next) => {
+  const id = req.params.id;
+  Book.deleteOne({ book_id: id }, (err) => {
+    if (err) { next(err); }
+    res.redirect('/allbooks');
+  });
+});
+
 module.exports = router;
