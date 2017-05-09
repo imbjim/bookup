@@ -8,24 +8,6 @@
 
   <div class="form-wrapper">
 
-
-    <!-- <form action="/login" method="POST">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username">
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-      </div>
-      <div>
-        <input type="submit" value="Log In">
-      </div>
-    </form> -->
-
-
-
-
     <h2 class="welcome-message">Nice to see you here!</h2>
 
     <form action="/login" method="POST" id="login-form">
@@ -35,9 +17,9 @@
           <input type="password" class="basic-form" name="password" placeholder="password">
         </div>
 
-        <% if (typeof message !== "undefined") { %>
+        <!-- <% if (typeof message !== "undefined") { %>
           <div class="error-message"><%= message %></div>
-        <% } %>
+        <% } %> -->
 
         <button type="submit" class="send-button">Login</button>
 

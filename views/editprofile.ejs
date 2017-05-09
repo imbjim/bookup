@@ -12,13 +12,17 @@
 
         <h3 class="new-account-header">Edit your profile</h3>
         <div class="form-group">
-          <input type="text" class="basic-form" name="username" placeholder="username">
-          <input type="text" class="basic-form" name="email" placeholder="myemail@email.com">
-          <input type="text" class="basic-form" name="phone" placeholder="phone">
-          <input type="text" class="basic-form" name="city" placeholder="city">
+          <input type="text" class="basic-form" name="username" placeholder="<%= user.username %>">
+          <input type="text" class="basic-form" name="email" placeholder="<%= user.email %>">
+          <input type="text" class="basic-form" name="phone" placeholder="<%= user.phone %>">
+          <input type="text" class="basic-form" name="city" placeholder="<%= user.city %>">
+          <input type="text" class="basic-form" name="province" placeholder="<%= user.city %>">
+          <input type="text" class="basic-form" name="country" placeholder="<%= user.province %>">
+          <input type="text" class="basic-form" name="age" placeholder="<%= user.age %>">
+          <input type="text" class="basic-form" name="gender" placeholder="<%= user.gender %>">
           <!-- <input type="text" class="form-new-account" name="image" placeholder="upload image"> -->
-          <input type="password" class="basic-form" name="password" placeholder="password">
-          <input type="password" class="basic-form" name="new-password" placeholder=" new password">
+          <!-- <input type="password" class="basic-form" name="password" placeholder="password">
+          <input type="password" class="basic-form" name="new-password" placeholder=" new password"> -->
         </div>
         <button type="button" class="send-button">Save</button>
 
