@@ -1,30 +1,115 @@
-
 <nav class="navbar">
   <div class="navbar-wrapper">
     <h3 class="brand">bookup</h3>
-      <a href="/logout" class="navbar-button nabvar-button-right">Logout</a>
-      <a href="/profile" class="navbar-button navbar-button-left">Profile</a>
+    <a href="/logout" class="navbar-button nabvar-button-right">Logout</a>
+    <!-- <a href="/" class="navbar-button navbar-button-left">Home</a> -->
   </div>
 </nav>
 <div class="container">
-  <h3 class="home-message">Regarding for a new lecture?</h3>
-  <div class="messages-home-box">
-    <p>Messages</p>
+
+
+  <div class="profile-wrapper">
+
+    <div class="profile-picture-wrapper">
+      <!-- here goes the profile picture -->
+    </div>
+    <div class="profile-data-wrapper">
+      <ul>
+        <li>Wilfredo Vargas</li>
+        <li>La Havana</li>
+        <li>aquiestawilfredo@email.com</li>
+        <li>689 563 285</li>
+
+      </ul>
+    </div>
+
   </div>
-  <div class="option-container">
-    <!-- <div class="option-box option-right">
-      <p>Books Available In Your City</p>
-    </div> -->
-    <a href="/available-books" class="option-box option-right">
-      Books Available In Your City
-    </a>
-    <!-- <div class="option-box option-left">
-      <p>All Books</p>
-    </div> -->
-    <a href="/all-books" class="option-box option-left">
-      All Books
-    </a>
+
+  <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
+
+  <nav class="books-navbar">
+    <a href="/">My Books</a>
+    <a href="/all-books">All Books</a>
+    <a href="/available-books">Available Books</a>
+    <a href="/messages">Messages</a>
+  </nav>
+
+
+
+  <div class="mybooks-wrapper">
+
+    <div class="mybooks new">
+      <div class="cover-wrapper">
+        <!-- class="cover" -->
+        <!-- here goes the cover -->
+      </div>
+      <div class="book-list-info">
+        <ul>
+          <br>
+          <li><a href="/add-book">Add a New Book</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mybooks">
+      <div class="cover-wrapper">
+        <!-- class="cover" -->
+        <!-- here goes the cover -->
+      </div>
+      <div class="book-list-info">
+        <ul>
+          <li>Book Title</li>
+          <li>Author of the Book</li>
+          <!-- <li>Genre</li>
+          <li>Pages</li> -->
+        </ul>
+        <div class="book-options">
+          <a href="/edit-book">Edit</a>
+          <a href="#">Delete</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mybooks">
+      <div class="cover-wrapper">
+        <!-- class="cover" -->
+        <!-- here goes the cover -->
+      </div>
+      <div class="book-list-info">
+        <ul>
+          <li>Book Title</li>
+          <li>Author of the Book</li>
+          <!-- <li>Genre</li>
+          <li>Pages</li> -->
+        </ul>
+        <div class="book-options">
+          <a href="/edit-book">Edit</a>
+          <a href="#">Delete</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mybooks">
+      <div class="cover-wrapper">
+        <!-- class="cover" -->
+        <!-- here goes the cover -->
+      </div>
+      <div class="book-list-info">
+        <ul>
+          <li>Book Title</li>
+          <li>Author of the Book</li>
+          <!-- <li>Genre</li>
+          <li>Pages</li> -->
+        </ul>
+        <div class="book-options">
+          <a href="/edit-book">Edit</a>
+          <a href="#">Delete</a>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 
 </div>
 

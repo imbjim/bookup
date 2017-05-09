@@ -35,6 +35,10 @@ router.get('/available-books', auth.isAuthenticated, (req, res, next) => { //add
   res.render('availablebooks');
 });
 
+router.get('/add-book', auth.isAuthenticated, (req, res, next) => { //added by eduard
+  res.render('addbook');
+});
+
 // router.get('/private', auth.isAuthenticated, (req, res, next) => {
 //   res.send('private')
 // })

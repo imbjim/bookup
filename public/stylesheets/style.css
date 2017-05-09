@@ -114,6 +114,15 @@ navbar-wrapper:after {
   outline-width: 2px;
 }
 
+.add-file {
+  text-align: center;
+  margin: 30px;
+}
+
+.upload {
+
+}
+
 .send-button {
   width: 120px;
   height: 35px;
@@ -299,11 +308,11 @@ body {
 }
 
 .profile-picture-wrapper {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: rgba(255, 255, 255, 0.3);
   border: 2px solid #7fc857;
-  margin: 7px 7px 15px 15px;
+  margin: 7px 7px 10px 15px;
   border-radius: 4px 4px 4px 4px;
   float: left;
   box-sizing: border-box;
@@ -316,7 +325,7 @@ body {
 
 .profile-data-wrapper {
   /*min-height: 150px;*/
-  padding: 0px 10px 0px 7px;
+  padding: 0px 7px 0px 7px;
   border-radius: 4px 4px 4px 4px;
   margin-top: 5px;
   box-sizing: border-box;
@@ -343,9 +352,9 @@ body {
   border-radius: 4px 4px 4px 4px;
   color: #fff;
   text-decoration: none;
-  margin-top: 10px;
-  margin-left: 25px;
-  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 19px;
+  font-size: 12px;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -354,19 +363,50 @@ body {
   background: #96d971;
 }
 
+/*---------------------BOOKS NAVBAR--------------------*/
+
+
+.books-navbar {
+  width: 100%;
+  margin: 30px 0px 3px 0px;
+
+}
+
+.books-navbar:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.books-navbar a {
+  text-decoration: none;
+  padding: 10px 7px 10px 7px;
+  box-sizing: border-box;
+  /*background: #282828;*/
+  font-size: 14px;
+  color: #282828;
+  display: block;
+  float: left;
+}
+
+.books-navbar a:hover {
+  /*background: #424141;*/
+  color: #7fc857;
+}
+
 /*---------------MY BOOKS INSIDE PROFILE---------------*/
 
 .mybooks-wrapper {
   width: 100%;
-  margin: 20px auto;
+  margin: 0px auto;
   border-top: 2px solid #666;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .mybooks {
   width: 150px;
   height: auto;
-  margin: 10px 15px;;
+  margin: 10px 11px;;
   background: #eee;
   border-radius: 6px 6px 6px 6px;
   box-sizing: border-box;
@@ -459,6 +499,17 @@ body {
 
   .edit-profile-button {
     margin-left: 50px;
+  }
+
+  .books-navbar a {
+    text-decoration: none;
+    padding: 10px 7px 10px 7px;
+    box-sizing: border-box;
+    /*background: #282828;*/
+    font-size: 15px;
+    color: #282828;
+    display: block;
+    float: left;
   }
 }
 
