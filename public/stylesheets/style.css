@@ -8,8 +8,8 @@
 
 body {
   font-family: arial, sans-serif;
-  background: #eee;
-  background-image: url("../images/book-blur.jpg");
+  background: #fff;
+  /*background-image: url("../images/book-blur.jpg");*/
 }
 
 .navbar {
@@ -58,10 +58,11 @@ navbar-wrapper:after {
   font-size: 14px;
   color: #fff;
   background: #282828;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  border-bottom: none;
+  border: none;
+  padding-top: 25px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
   cursor: pointer;
   outline: none;
 }
@@ -113,6 +114,15 @@ navbar-wrapper:after {
   outline-width: 2px;
 }
 
+.add-file {
+  text-align: center;
+  margin: 30px;
+}
+
+.upload {
+
+}
+
 .send-button {
   width: 120px;
   height: 35px;
@@ -141,7 +151,7 @@ navbar-wrapper:after {
 
 .container {
   width: 90%;
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -179,6 +189,11 @@ navbar-wrapper:after {
   margin-bottom: 10px;
   border: 2px solid #eee;
   color: #7fc857;
+  display: block;
+  padding: 40px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .option-box:hover {
@@ -187,10 +202,6 @@ navbar-wrapper:after {
   cursor: pointer;
 }
 
-.option-box p {
-  padding: 25px;
-  text-align: center;
-}
 
 
 /*---------------LOGIN, SIGNUP AND HOME--------------*/
@@ -282,6 +293,182 @@ body {
   resize: none;
 }
 
+/*----------------------PROFILE---------------------*/
+
+.profile-wrapper {
+  width: 90%;
+  margin-top: 20px;
+  position: relative;
+}
+
+.profile-wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.profile-picture-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid #7fc857;
+  margin: 7px 7px 10px 15px;
+  border-radius: 4px 4px 4px 4px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.profile-picture {
+  width: 95%;
+  height: 95%;
+}
+
+.profile-data-wrapper {
+  /*min-height: 150px;*/
+  padding: 0px 7px 0px 7px;
+  border-radius: 4px 4px 4px 4px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.profile-data-wrapper ul {
+  list-style-type: none;
+}
+
+.profile-data-wrapper li {
+  width: 100%;
+  font-size: 14px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  /*border-bottom: 1px dashed #aaa;*/
+}
+
+.edit-profile-button {
+  height: 30px;
+  widht: 100px;
+  background: #7fc857;
+  padding: 7px;
+  border-radius: 4px 4px 4px 4px;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-left: 19px;
+  font-size: 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.edit-profile-button:hover {
+  background: #96d971;
+}
+
+/*---------------------BOOKS NAVBAR--------------------*/
+
+
+.books-navbar {
+  width: 100%;
+  margin: 30px 0px 3px 0px;
+
+}
+
+.books-navbar:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.books-navbar a {
+  text-decoration: none;
+  padding: 10px 7px 10px 7px;
+  box-sizing: border-box;
+  /*background: #282828;*/
+  font-size: 14px;
+  color: #282828;
+  display: block;
+  float: left;
+}
+
+.books-navbar a:hover {
+  /*background: #424141;*/
+  color: #7fc857;
+}
+
+/*---------------MY BOOKS INSIDE PROFILE---------------*/
+
+.mybooks-wrapper {
+  width: 100%;
+  margin: 0px auto;
+  border-top: 2px solid #666;
+  padding-top: 10px;
+}
+
+.mybooks {
+  width: 150px;
+  height: auto;
+  margin: 10px 11px;;
+  background: #eee;
+  border-radius: 6px 6px 6px 6px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.mybooks:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.new {
+  height: 270px;
+}
+
+.cover-wrapper {
+  width: 100%;
+  height: 200px;
+  background: #777;
+  float: left;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.cover {
+  width: 98%;
+  margin: 0 auto;
+
+}
+
+.book-list-info ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.book-list-info li {
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+
+.book-options {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 6px;
+  padding-bottom: 7px;
+}
+
+.book-options a {
+  text-decoration: none;
+}
+
+.book-options a:first-child {
+  margin-right: 10px;
+}
+
+.book-options a:last-child {
+  color: rgb(171, 4, 34);
+}
+
 /*--------------MEDIA QUERIES------------*/
 
 @media (min-width: 500px) {
@@ -293,6 +480,36 @@ body {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
+  }
+
+  .profile-data-wrapper {
+    padding: 10px 10px 0px 7px;
+  }
+
+  .profile-data-wrapper li {
+    font-size: 15px;
+  }
+
+  .profile-picture-wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 15px 15px 20px 15px;
+    padding: 5px 5px 5px 5px;
+  }
+
+  .edit-profile-button {
+    margin-left: 50px;
+  }
+
+  .books-navbar a {
+    text-decoration: none;
+    padding: 10px 7px 10px 7px;
+    box-sizing: border-box;
+    /*background: #282828;*/
+    font-size: 15px;
+    color: #282828;
+    display: block;
+    float: left;
   }
 }
 

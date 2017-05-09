@@ -1,0 +1,70 @@
+<nav class="navbar">
+  <div class="navbar-wrapper">
+    <h3 class="brand">bookup</h3>
+    <a href="/logout" class="navbar-button nabvar-button-right">Logout</a>
+    <!-- <a href="/" class="navbar-button navbar-button-left">Home</a> -->
+  </div>
+</nav>
+<div class="container">
+
+
+  <div class="profile-wrapper">
+
+    <div class="profile-picture-wrapper">
+      <!-- here goes the profile picture -->
+    </div>
+    <div class="profile-data-wrapper">
+      <ul>
+        <li>Wilfredo Vargas</li>
+        <li>La Havana</li>
+        <li>aquiestawilfredo@email.com</li>
+        <li>689 563 285</li>
+
+      </ul>
+    </div>
+
+  </div>
+
+  <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
+
+  <nav class="books-navbar">
+    <a href="/">My Books</a>
+    <a href="/all-books">All Books</a>
+    <a href="/available-books">Available Books</a>
+    <a href="/messages">Messages</a>
+  </nav>
+
+  <div class="mybooks-wrapper">
+
+    <div class="form-wrapper">
+      <form action="/signup" method="POST" id="login-form">
+
+          <h3 class="new-account-header">Add your book</h3>
+          <div class="form-group">
+            <input type="text" class="basic-form" name="title" placeholder="title">
+            <input type="text" class="basic-form" name="author" placeholder="author">
+            <input type="text" class="basic-form" name="genre" placeholder="genre">
+            <input type="text" class="basic-form" name="city" placeholder="city">
+            <input type="text" class="basic-form" name="pages" placeholder="pages">
+            <textarea class="description-form" name="name" >description</textarea>
+            <div class="add-file">
+              <label for="cover">Upload a cover</label>
+              <input type="file" class="upload" id="cover" name="cover">
+            </div>
+
+
+          </div>
+          <button type="button" class="send-button">Save</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+<!-- <footer class="footer">
+  <div class="footer-wrapper">
+    <p class="footer-quote">“A book lying idle on a shelf is wasted ammunition. Like money, books must be kept in constant circulation... A book is not only a friend, it makes friends for you. When you have possessed a book with mind and spirit, you are enriched. But when you pass it on you are enriched threefold.”</p>
+    <p class="footer-quote-author">Henry Miller</p>
+  </div>
+</footer> -->
