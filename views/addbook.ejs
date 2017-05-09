@@ -8,36 +8,10 @@
 <div class="container">
 
 
-  <div class="profile-wrapper">
 
-    <div class="profile-picture-wrapper">
-      <!-- here goes the profile picture -->
-    </div>
-    <div class="profile-data-wrapper">
-      <ul>
-        <li>Wilfredo Vargas</li>
-        <li>La Havana</li>
-        <li>aquiestawilfredo@email.com</li>
-        <li>689 563 285</li>
-
-      </ul>
-    </div>
-
-  </div>
-
-  <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
-
-  <nav class="books-navbar">
-    <a href="/">My Books</a>
-    <a href="/all-books">All Books</a>
-    <a href="/available-books">Available Books</a>
-    <a href="/messages">Messages</a>
-  </nav>
-
-  <div class="mybooks-wrapper">
 
     <div class="form-wrapper">
-      <form action="/signup" method="POST" id="login-form">
+      <form action="/newBook" method="POST">
 
           <h3 class="new-account-header">Add your book</h3>
           <div class="form-group">
@@ -45,18 +19,18 @@
             <input type="text" class="basic-form" name="author" placeholder="author">
             <input type="text" class="basic-form" name="genre" placeholder="genre">
             <input type="text" class="basic-form" name="pages" placeholder="pages">
-            <textarea class="description-form" name="description" >description</textarea>
+            <textarea class="description-form" name="description" placeholder="description"></textarea>
             <div class="add-file">
               <label for="cover">Upload a cover</label>
               <input type="file" class="upload" id="cover" name="cover">
             </div>
 
           </div>
-          <button type="button" class="send-button">Save</button>
 
+          <button type="submit" class="send-button">Add</button>
+          <a href="/" class="cancel-button">Cancel</a>
       </form>
 
-    </div>
 
   </div>
 
