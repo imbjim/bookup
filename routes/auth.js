@@ -8,6 +8,7 @@ const bcrypt     = require("bcrypt");
 const bcryptSalt = 10;
 
 const User = require('../models/user');
+const Book = require('../models/book')
 
 /* GET users listing. */
 router.get('/signup', function(req, res, next) {
@@ -72,7 +73,7 @@ router.get('/logout', (req, res, next) => {
 
 router.get("/profile", function(req, res, next){//added by Imre
   let user = req.user;
-  console.log(req.user)
+  // console.log(req.user)
   res.render('auth/profile', { user: user});
 });
 
@@ -89,8 +90,51 @@ router.post('/profile', (req, res, next) => {// added by Imre
   };
   User.findByIdAndUpdate(req.user._id, userInfo, (err, user)=>{
     res.redirect('/profile');
-  })
+  });
 });
 
+router.get('/allbooks', (req, res, next) => {
+  Book.find({}, (err, book) => {
+    if (err) {
+      next(err);
+    } else {
+      console.log(book);
+      res.render('auth/allbooks', { book: book });
+    }
+  });
+});
+
+/* GET new book */
+router.get('/addbook', (req, res, next) => {// added by Imre
+
+  Book.find({}, (err, book) => {
+    if (err) {
+      next(err);
+    } else {
+      console.log(book);
+      res.render('auth/addbook', { book: book });
+    }
+  });
+});
+
+
+router.post('/allbooks', (req, res, next) => {// added by Imre
+  const bookInfo = {
+    title: req.body.title,
+    author: req.body.author,
+    picture: req.body.picture,
+    description: req.body.description,
+    genre: req.body.genre,
+    pages: req.body.pages,
+  };
+
+  const newBook = new Book(bookInfo);
+  newBook.save( (err) => {
+    if (err) {
+      next(err);
+    }
+    res.redirect('auth/allbooks');
+  });
+});
 
 module.exports = router;

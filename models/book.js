@@ -6,7 +6,7 @@ const bookSchema = new Schema({
   title: String,
   author: String,
   genre: String,
-  pages: String,
+  pages: Number,
   description: String,
   picture: String,
   owner: { type: Schema.Types.ObjectId, ref: 'User' },

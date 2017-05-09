@@ -12,11 +12,13 @@ const passport      = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
 const User = require('./models/user');
+const Book = require('./models/book');//added by Imre
 
 // routes
 var index = require('./routes/index');
 var auth = require('./routes/auth');
 var users = require('./routes/users');
+var books = require('./routes/books'); //added by Imre
 
 
 const mongoose = require("mongoose");
@@ -73,8 +75,10 @@ passport.use(new LocalStrategy((username, password, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 app.use('/', index);
 app.use('/', auth);
+
 app.use('/users', users);
 
 
