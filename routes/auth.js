@@ -133,7 +133,15 @@ router.post('/allbooks', (req, res, next) => {// added by Imre
     if (err) {
       next(err);
     }
-    res.redirect('auth/allbooks');
+    res.redirect('/allbooks');
+  });
+});
+
+router.get('/:book_id/delete', (req, res, next) => {
+  const id = req.params.id;
+  Book.deleteOne({ book_id: id }, (err) => {
+    if (err) { next(err); }
+    res.redirect('/allbooks');
   });
 });
 
