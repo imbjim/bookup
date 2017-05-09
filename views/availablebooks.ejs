@@ -15,10 +15,12 @@
     </div>
     <div class="profile-data-wrapper">
       <ul>
-        <li>Wilfredo Vargas</li>
-        <li>La Havana</li>
-        <li>aquiestawilfredo@email.com</li>
-        <li>689 563 285</li>
+        <li><%= user.name %></li>
+        <li><%= user.username %></li>
+        <li><%= user.email %></li>
+        <li><%= user.city %></li>
+        <li><%= user.phone %></li>
+        <li><%= user.country %></li>
 
       </ul>
     </div>
@@ -36,17 +38,22 @@
 
   <div class="mybooks-wrapper">
 
+  <% book.forEach((book) => { %>
+    <% if (book.available === "yes") { %>
     <div class="mybooks">
       <div class="cover-wrapper">
         <!-- here goes the cover -->
       </div>
       <div class="book-list-info">
         <ul>
-          <li>Title</li>
-          <li>Author</li>
+          <li><%= book.title %></li>
+          <li><%= book.author %></li>
         </ul>
       </div>
     </div>
+
+    <% } %>
+  <% }); %>
 
   </div>
 

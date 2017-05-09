@@ -9,8 +9,9 @@ const bookSchema = new Schema({
   pages: Number,
   description: String,
   picture: String,
-  owner: { type: Schema.Types.ObjectId, ref: 'User' },
-  current_user: { type: Schema.Types.ObjectId, ref: 'User' }
+  available: {type: String, default: 'yes'},
+  owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  current_user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

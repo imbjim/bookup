@@ -13,12 +13,16 @@ const Book = require('../models/book');
 //   res.render('index', { title: 'Express' });
 // });
 
-
-
 router.get('/', auth.isAuthenticated, (req, res, next) => {
   let user = req.user;
-  // console.log(req.user)
-  res.render('index', { user: user});
+    Book.find({}, (err, book) => {
+      if (err) {
+        next(err);
+      } else {
+        console.log(user._id , "holasssss", book[0].current_user); //preguntar el perqué no funciona index.ejs if statement
+        res.render('index', { user: user, book: book});
+      }
+    })
 });
 
 router.get('/edit-profile', auth.isAuthenticated, (req, res, next) => {
@@ -45,7 +49,13 @@ router.post('/', auth.isAuthenticated, (req, res, next) => { //added by eduard
 });
 
 //----------------------
-
+router.get('/:id/deletebook', (req, res, next) => {
+  const id = req.params.id;
+  Book.deleteOne({ _id: id }, (err) => {
+    if (err) { next(err) }
+    res.redirect('/')
+  })
+})
 
 // router.get('/private', auth.isAuthenticated, (req, res, next) => {
 //   res.send('private')
