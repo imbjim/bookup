@@ -36,23 +36,6 @@ router.get('/edit-profile', auth.isAuthenticated, (req, res, next) => { //added 
   });
 });
 
-//--------------Have doubts
-// router.post('/profile', (req, res, next) => {// added by Imre
-//   const userInfo = {
-//     username: req.body.username,
-//     email: req.body.email,
-//     phone: req.body.phone,
-//     city: req.body.city,
-//     province: req.body.province,
-//     country: req.body.country,
-//     age: req.body.age,
-//     gender: req.body.gender
-//   };
-//   User.findByIdAndUpdate(req.user._id, userInfo, (err, user)=>{
-//     res.redirect('/profile');
-//   });
-// });
-
 //----------------------
 
 router.get('/edit-book', auth.isAuthenticated, (req, res, next) => { //added by eduard
