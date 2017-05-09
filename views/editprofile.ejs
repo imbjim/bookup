@@ -2,38 +2,31 @@
   <div class="navbar-wrapper">
     <h3 class="brand">bookup</h3>
     <a href="/logout" class="navbar-button nabvar-button-right">Logout</a>
-    <a href="/profile" class="navbar-button navbar-button-left">Profile</a>
+    <a href="/" class="navbar-button navbar-button-left">Home</a>
   </div>
 </nav>
 <div class="login-container">
 
   <div class="form-wrapper">
-    <form action="/signup" method="POST" id="login-form">
+    <form action="/" method="POST" id="login-form">
 
         <h3 class="new-account-header">Edit your profile</h3>
         <div class="form-group">
-          <input type="text" class="basic-form" name="username" placeholder="<%= user.username %>">
-          <input type="text" class="basic-form" name="email" placeholder="<%= user.email %>">
-          <input type="text" class="basic-form" name="phone" placeholder="<%= user.phone %>">
-          <input type="text" class="basic-form" name="city" placeholder="<%= user.city %>">
-          <input type="text" class="basic-form" name="province" placeholder="<%= user.city %>">
-          <input type="text" class="basic-form" name="country" placeholder="<%= user.province %>">
-          <input type="text" class="basic-form" name="age" placeholder="<%= user.age %>">
-          <input type="text" class="basic-form" name="gender" placeholder="<%= user.gender %>">
+
+          <input type="text" class="basic-form" id ="username" name="username" value="<%= user.username %>" placeholder="username">
+          <input type="text" class="basic-form" id="name" name="name" value="<%= user.name %>" placeholder="name">
+          <input type="text" class="basic-form" id="mobile" name="phone" value="<%= user.phone %>" placeholder="mobile">
+          <input type="text" class="basic-form" id="city" name="city" value="<%= user.city %>" placeholder="city">
+          <input type="text" class="basic-form" id="country" name="country" value="<%= user.country %>" placeholder="country">
+          <input type="number" class="basic-form" id="age" name="age" value="<%= user.age %>" placeholder="age">
+          <input type="text" class="basic-form" id="gender" name="gender" value="<%= user.gender %>"  placeholder="gender">
           <!-- <input type="text" class="form-new-account" name="image" placeholder="upload image"> -->
           <!-- <input type="password" class="basic-form" name="password" placeholder="password">
           <input type="password" class="basic-form" name="new-password" placeholder=" new password"> -->
         </div>
-        <button type="button" class="send-button">Save</button>
+        <button type="submit" class="send-button">Save</button>
 
     </form>
   </div>
 
 </div>
-
-<!-- <footer class="footer">
-  <div class="footer-wrapper">
-    <p class="footer-quote">“A book lying idle on a shelf is wasted ammunition. Like money, books must be kept in constant circulation... A book is not only a friend, it makes friends for you. When you have possessed a book with mind and spirit, you are enriched. But when you pass it on you are enriched threefold.”</p>
-    <p class="footer-quote-author">Henry Miller</p>
-  </div>
-</footer> -->

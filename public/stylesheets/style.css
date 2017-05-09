@@ -1,4 +1,4 @@
-* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav {
+* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav, label {
   padding: 0;
   border: 0;
   margin: 0;
@@ -95,6 +95,14 @@ navbar-wrapper:after {
   margin: 40px auto 30px auto;
   text-align: center;
   font-size: 22px
+}
+.form-group p {
+  text-align: center;
+}
+
+.basic-label {
+  width: 260px;
+  margin: 10px auto 0 auto;
 }
 
 .basic-form {
