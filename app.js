@@ -6,6 +6,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer  = require('multer'); //added by Imre
+
 const session       = require("express-session");
 const bcrypt        = require("bcrypt");
 const passport      = require("passport");
@@ -74,6 +76,8 @@ passport.use(new LocalStrategy((username, password, next) => {
     return next(null, user);
   });
 }));
+
+
 
 app.use(passport.initialize());
 app.use(passport.session());
