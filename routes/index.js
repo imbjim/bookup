@@ -10,12 +10,12 @@ const Book = require('../models/book');
 
 router.get('/', auth.isAuthenticated, (req, res, next) => {
   let user = req.user;
-    Book.find({}, (err, book) => {
+    Book.find({}, (err, books) => {
       if (err) {
         next(err);
       } else {
-        console.log(user._id , "holasssss", book[0].current_user); //preguntar el perqué no funciona index.ejs if statement
-        res.render('index', { user: user, book: book});
+        console.log(user._id.equals(books[0].current_user)); //preguntar el perqué no funciona index.ejs if statement
+        res.render('index', { user: user, books: books});
       }
     })
 });

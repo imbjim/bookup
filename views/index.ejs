@@ -54,8 +54,8 @@
     </div>
 
 
-<% for (i=0; i < book.lenght; i++) { %>
-  <% if (user._id === book[i].current_user) { %>
+<% books.forEach((book) => { %>
+ <% if (user._id.equals(book.current_user)) { %>
     <div class="mybooks">
       <div class="cover-wrapper">
         <!-- class="cover" -->
@@ -76,8 +76,9 @@
         </div>
       </div>
     </div>
-  <% } %>
-<% }; %>
+    <% }; %>
+
+<% }); %>
 
   </div>
 
