@@ -20,12 +20,13 @@
           <input type="text" class="basic-form" name="city" placeholder="city" value="<%= book.city %>">
           <input type="text" class="basic-form" name="pages" placeholder="pages" value="<%= book.pages %>">
           <textarea class="description-form" name="name" placeholder="description" value="<%= book.description %>"></textarea>
-          <input type="file" class="basic-form" name="cover" placeholder="upload cover" value="<%= book.cover %>">
+          <input type="file" class="basic-form" name="cover" id="cover" placeholder="upload cover" value="<%= book.cover %>">
           <input type="hidden" class="basic-form" name="id" placeholder="bookid" value="<%= book._id %>">
           <input type="hidden" class="basic-form" name="bookPicture" placeholder="bookid" value="<%= book.picture %>">
         </div>
 
         <button type="submit" class="send-button">Save</button>
+        <a href="/" class="cancel-button" id="editbook-cancel">Cancel</a>
 
 
     </form>

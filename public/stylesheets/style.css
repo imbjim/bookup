@@ -493,6 +493,12 @@ body {
   color: rgb(171, 4, 34);
 }
 
+/*---------------EDIT BOOK VIEW---------------*/
+#cover {
+  text-align: center;
+}
+
+
 /*--------------MEDIA QUERIES------------*/
 
 @media (min-width: 500px) {
