@@ -14,7 +14,7 @@ router.get('/', auth.isAuthenticated, (req, res, next) => {
       if (err) {
         next(err);
       } else {
-        console.log(user._id.equals(books[0].current_user)); //preguntar el perqué no funciona index.ejs if statement
+        // console.log(user._id.equals(books[0].current_user)); //preguntar el perqué no funciona index.ejs if statement
         res.render('index', { user: user, books: books});
       }
     })

@@ -34,12 +34,51 @@ router.post('/newBook',  auth.isAuthenticated, (req, res, next) => {// added by 
 });
 
 
-router.get('/edit-book', auth.isAuthenticated, (req, res, next) => { //added by eduard
-  let user = req.user;
+router.get('/:id/edit', auth.isAuthenticated, (req, res, next) => { //added by eduard
 
-  res.render('editbook', { user: user});
+  Book.findById(req.params.id, (err, book) => {
+    if (err) { next(err) };
+
+ console.log(book);
+
+  res.render('editbook', { book: book});
+   });
+});
+/////testing
+router.post('/:id', auth.isAuthenticated, (req, res, next) => { //added by eduard
+
+  const bookInfo = {
+    title: req.body.title,
+    author: req.body.author,
+    pages: req.body.pages,
+    description: req.body.pages,
+    available: req.body.available,
+    picture: req.body.picture,
+  };
+  console.log("hi there")
+  Book.findByIdAndUpdate(req.params.id, bookInfo, (err, book)=>{
+    console.log(book, "this is book")
+    if (err) {next(err)}
+    res.redirect('/');
+  });
 });
 
+// router.post('/:id', (req, res, next) => {
+//   const productInfo = {
+//     name: req.body.name,
+//     price: req.body.price,
+//     imageUrl: req.body.imageUrl,
+//     description: req.body.description
+//   }
+//
+//   Product.findByIdAndUpdate(req.params.id, productInfo ,(err, product) => {
+//     if (err) { next(err) }
+//     res.redirect('/products')
+//   })
+// })
+
+
+///////
 router.get('/all-books', auth.isAuthenticated, (req, res, next) => { //added by eduard
   let user = req.user;
   Book.find({}, (err, book) => {
