@@ -21,6 +21,7 @@ router.post('/newBook',  auth.isAuthenticated, (req, res, next) => {// added by 
     author: req.body.author,
     cover: req.body.picture,
     description: req.body.description,
+    available: req.body.available,
     genre: req.body.genre,
     pages: req.body.pages,
     current_user: req.user._id, //preguntar dubtes de perquè no agafa les dades al model mitjançant ObjectId
@@ -35,6 +36,7 @@ router.post('/newBook',  auth.isAuthenticated, (req, res, next) => {// added by 
     res.redirect('/');
   });
 });
+
 
 
 router.get('/editbook/:id', auth.isAuthenticated, (req, res, next) => { //added by Imre
@@ -69,10 +71,10 @@ router.post('/editbook', upload.single('cover'), (req, res, next) => {// added b
   };
 
   Book.findByIdAndUpdate(bookId, bookInfo, (err, book)=>{
+
     res.redirect('/');
   });
 });
-
 
 router.get('/all-books', auth.isAuthenticated, (req, res, next) => { //added by eduard
   let user = req.user;

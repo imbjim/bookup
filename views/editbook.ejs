@@ -8,10 +8,12 @@
 <div class="login-container">
 
   <div class="form-wrapper">
+
     <form action="/editbook" method="POST" id="login-form" enctype="multipart/form-data">
 
-        <h3 class="new-account-header">Edit this book</h3>
+        <h3 class="new-account-header">Edit "<%= book.title %>"</h3>
         <div class="form-group">
+
           <input type="text" class="basic-form" name="title" placeholder="title" value="<%= book.title %>">
           <input type="text" class="basic-form" name="author" placeholder="author" value="<%= book.author %>">
           <input type="text" class="basic-form" name="genre" placeholder="genre" value="<%= book.genre %>">
@@ -24,6 +26,7 @@
         </div>
 
         <button type="submit" class="send-button">Save</button>
+
 
     </form>
   </div>
