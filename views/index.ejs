@@ -58,8 +58,7 @@
  <% if (user._id.equals(book.current_user)) { %>
     <div class="mybooks">
       <div class="cover-wrapper">
-        <!-- class="cover" -->
-        <!-- here goes the cover -->
+        <img src="<%= book.picture%>" alt="book cover picture" class="cover">
       </div>
       <div class="book-list-info">
         <ul>
@@ -69,7 +68,7 @@
           <li>Pages</li> -->
         </ul>
         <div class="book-options">
-          <a href="/edit-book">Edit</a>
+          <a href="/editbook/<%=book._id%>">Edit</a>
           <a href="#">Free</a>
           <a href="/<%=book._id%>/deletebook">Delete</a>
 
