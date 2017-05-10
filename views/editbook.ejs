@@ -9,7 +9,7 @@
 
   <div class="form-wrapper">
 
-    <form action="/editbook" method="POST" id="login-form" enctype="multipart/form-data">
+    <form action="/<%= book._id %>" method="POST" id="login-form" enctype="multipart/form-data">
 
         <h3 class="new-account-header">Edit "<%= book.title %>"</h3>
         <div class="form-group">
@@ -17,7 +17,6 @@
           <input type="text" class="basic-form" name="title" placeholder="title" value="<%= book.title %>">
           <input type="text" class="basic-form" name="author" placeholder="author" value="<%= book.author %>">
           <input type="text" class="basic-form" name="genre" placeholder="genre" value="<%= book.genre %>">
-          <input type="text" class="basic-form" name="city" placeholder="city" value="<%= book.city %>">
           <input type="text" class="basic-form" name="pages" placeholder="pages" value="<%= book.pages %>">
           <textarea class="description-form" name="name" placeholder="description" value="<%= book.description %>"></textarea>
           <input type="file" class="basic-form" name="cover" placeholder="upload cover" value="<%= book.cover %>">
