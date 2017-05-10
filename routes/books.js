@@ -18,6 +18,7 @@ router.post('/newBook',  auth.isAuthenticated, (req, res, next) => {// added by 
     author: req.body.author,
     cover: req.body.picture,
     description: req.body.description,
+    available: req.body.available,
     genre: req.body.genre,
     pages: req.body.pages,
     current_user: req.user._id, //preguntar dubtes de perquè no agafa les dades al model mitjançant ObjectId
@@ -55,9 +56,9 @@ router.post('/:id', auth.isAuthenticated, (req, res, next) => { //added by eduar
     available: req.body.available,
     picture: req.body.picture,
   };
-  console.log("hi there")
+  console.log(bookInfo);
   Book.findByIdAndUpdate(req.params.id, bookInfo, (err, book)=>{
-    console.log(book, "this is book")
+    // console.log(book, "this is book")
     if (err) {next(err)}
     res.redirect('/');
   });

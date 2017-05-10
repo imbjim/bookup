@@ -18,11 +18,12 @@
           <input type="number" class="basic-form" name="pages" value="<%= book.pages %>" placeholder="pages">
           <textarea class="description-form" name="name" placeholder="description"></textarea>
           <input type="file" class="basic-form" name="cover" placeholder="upload cover">
-          <label for="available">Do you want to share this book?</label>
-          <select id="available" name="available">
-            <option value="yes">YES</option>
-            <option value="no">NO</option>
-          </select>
+          <label for="available">Do you want to share this book?</label> <br>
+
+            <input type="radio" name="available" value="1"> Yes <br>
+            <input type="radio" name="available" value="0"> No
+
+            <!-- <input type="checkbox" name="available" value="no" checked> No<br> -->
 
         </div>
 
