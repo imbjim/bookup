@@ -20,10 +20,7 @@
         <li><%= user.email %></li>
         <li><%= user.city %></li>
         <li><%= user.phone %></li>
-        <li><%= user.province %></li>
         <li><%= user.country %></li>
-        <li><%= user.age %></li>
-        <li><%= user.gender %></li>
 
       </ul>
     </div>
@@ -56,25 +53,9 @@
       </div>
     </div>
 
-    <div class="mybooks">
-      <div class="cover-wrapper">
-        <!-- class="cover" -->
-        <!-- here goes the cover -->
-      </div>
-      <div class="book-list-info">
-        <ul>
-          <li>Book Title</li>
-          <li>Author of the Book</li>
-          <!-- <li>Genre</li>
-          <li>Pages</li> -->
-        </ul>
-        <div class="book-options">
-          <a href="/edit-book">Edit</a>
-          <a href="#">Delete</a>
-        </div>
-      </div>
-    </div>
 
+<% books.forEach((book) => { %>
+ <% if (user._id.equals(book.current_user)) { %>
     <div class="mybooks">
       <div class="cover-wrapper">
         <!-- class="cover" -->
@@ -82,36 +63,22 @@
       </div>
       <div class="book-list-info">
         <ul>
-          <li>Book Title</li>
-          <li>Author of the Book</li>
+          <li><%= book.title %></li>
+          <li><%= book.author %></li>
           <!-- <li>Genre</li>
           <li>Pages</li> -->
         </ul>
         <div class="book-options">
           <a href="/edit-book">Edit</a>
-          <a href="#">Delete</a>
-        </div>
-      </div>
-    </div>
+          <a href="#">Free</a>
+          <a href="/<%=book._id%>/deletebook">Delete</a>
 
-    <div class="mybooks">
-      <div class="cover-wrapper">
-        <!-- class="cover" -->
-        <!-- here goes the cover -->
-      </div>
-      <div class="book-list-info">
-        <ul>
-          <li>Book Title</li>
-          <li>Author of the Book</li>
-          <!-- <li>Genre</li>
-          <li>Pages</li> -->
-        </ul>
-        <div class="book-options">
-          <a href="/edit-book">Edit</a>
-          <a href="#">Delete</a>
         </div>
       </div>
     </div>
+    <% }; %>
+
+<% }); %>
 
   </div>
 

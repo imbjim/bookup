@@ -16,10 +16,12 @@
     </div>
     <div class="profile-data-wrapper">
       <ul>
-        <li>Wilfredo Vargas</li>
-        <li>La Havana</li>
-        <li>aquiestawilfredo@email.com</li>
-        <li>689 563 285</li>
+        <li><%= user.name %></li>
+        <li><%= user.username %></li>
+        <li><%= user.email %></li>
+        <li><%= user.city %></li>
+        <li><%= user.phone %></li>
+        <li><%= user.country %></li>
 
       </ul>
     </div>
@@ -46,7 +48,7 @@
           <!-- test -->
           <li><%= book.title %></li>
           <li><%= book.author %></li>
-          <a href="/book/<%= book._id %>">See Book</a>
+          <a class="book-options" href="/book/<%= book._id %>">See Book</a>
           <!-- test -->
         </ul>
       </div>

@@ -9,6 +9,7 @@ const bookSchema = new Schema({
   pages: Number,
   description: String,
   picture: String,
+  available: {type: String, default: 'yes'},
   owner: { type: Schema.Types.ObjectId, ref: 'User' },
   current_user: { type: Schema.Types.ObjectId, ref: 'User' }
 }, {
