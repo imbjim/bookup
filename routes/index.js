@@ -6,12 +6,7 @@ const User = require('../models/user');
 const Book = require('../models/book');
 
 /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   console.log('req.session: ', req.session )
-//   console.log('req.user: ', req.user )
-//   console.log('req.isAuthenticated: ', req.isAuthenticated() )
-//   res.render('index', { title: 'Express' });
-// });
+
 
 router.get('/', auth.isAuthenticated, (req, res, next) => {
   let user = req.user;
