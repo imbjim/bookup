@@ -7,6 +7,9 @@ const auth = require('../helpers/auth');
 const User = require('../models/user');
 const Book = require('../models/book');
 
+
+//Get Add Book
+
 var multer  = require('multer'); //added by Imre
 var upload = multer({ dest: 'public/uploads' });
 
@@ -14,6 +17,8 @@ var upload = multer({ dest: 'public/uploads' });
 router.get('/add-book', auth.isAuthenticated, (req, res, next) => { //added by eduard
   res.render('addbook');
 });
+
+// Post Add Book
 
 router.post('/newBook',  auth.isAuthenticated, (req, res, next) => {// added by Imre
   const bookInfo = {
@@ -37,7 +42,13 @@ router.post('/newBook',  auth.isAuthenticated, (req, res, next) => {// added by 
   });
 });
 
+//Get Edit Book
 
+
+
+//becareful with this part from here----------------
+  Book.findById(req.params.id, (err, book) => {
+    if (err) { next(err) }
 
 router.get('/editbook/:id', auth.isAuthenticated, (req, res, next) => { //added by Imre
   let user = req.user;
@@ -46,11 +57,22 @@ router.get('/editbook/:id', auth.isAuthenticated, (req, res, next) => { //added 
     if (err) throw err;
 
       res.render('editbook', { user: user, book : book});
+    
+    //to here-------------------
+
 
   });
 
 });
 
+//becareful with this part, from here --------------
+
+//Post Edit Book
+
+router.post('/:id', auth.isAuthenticated, (req, res, next) => { //added by eduard
+
+
+//to here------------------
 
 router.post('/editbook', upload.single('cover'), (req, res, next) => {// added by Imre
   var bookId = req.body.id;
@@ -69,12 +91,25 @@ router.post('/editbook', upload.single('cover'), (req, res, next) => {// added b
     pages: req.body.pages,
     picture: 'uploads/' + file
   };
+  
+  //becareful with this part from here ----------------
+
+  console.log(bookInfo);
+  Book.findByIdAndUpdate(req.params.id, bookInfo, (err, book)=>{
+
+    if (err) {next(err)}
+
 
   Book.findByIdAndUpdate(bookId, bookInfo, (err, book)=>{
 
+  //to here ----------------------------
+  
     res.redirect('/');
   });
 });
+
+
+//Get All Books
 
 router.get('/all-books', auth.isAuthenticated, (req, res, next) => { //added by eduard
   let user = req.user;
@@ -82,11 +117,12 @@ router.get('/all-books', auth.isAuthenticated, (req, res, next) => { //added by 
     if (err) {
       next(err);
     } else {
-      // console.log(book);
       res.render('allbooks', { book: book, user: user });
     }
   });
 });
+
+//Get Available Books
 
 router.get('/available-books', auth.isAuthenticated, (req, res, next) => { //added by eduard
   let user = req.user;
@@ -97,9 +133,11 @@ router.get('/available-books', auth.isAuthenticated, (req, res, next) => { //add
     } else {
       res.render('availablebooks', { user: user, book: book});
     }
+
   });
 
-  // res.render('availablebooks', { user: user});
+
+  });
 });
 
 
