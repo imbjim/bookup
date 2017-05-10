@@ -301,6 +301,7 @@ body {
   resize: none;
 }
 
+
 /*----------------------PROFILE---------------------*/
 
 .profile-wrapper {
@@ -491,6 +492,23 @@ body {
 
 .book-options a:last-child {
   color: rgb(171, 4, 34);
+}
+
+/*---------------EDIT BOOK VIEW---------------*/
+#cover {
+  text-align: center;
+}
+
+/*----------------------SHOW BOOK VIEW---------------------*/
+#showbook-text span {
+  font-weight: bold;
+}
+#showbook-cover {
+  display: block;
+  margin: 0 auto;
+  height: 30%;
+  width: 30%;
+  margin-bottom: 1rem;
 }
 
 /*--------------MEDIA QUERIES------------*/
