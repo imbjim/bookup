@@ -14,7 +14,10 @@ var upload = multer({ dest: 'public/uploads' });
 //Get home page
 
 router.get('/', auth.isAuthenticated, (req, res, next) => {
+  console.log("in here")
+  
   let user = req.user;
+
     Book.find({}, (err, books) => {
       if (err) {
         next(err);
@@ -67,23 +70,12 @@ router.post('/edit', auth.isAuthenticated, upload.single('profile_image'), (req,
           gender: req.body.gender,
           picture: 'uploads/' + req.file.filename,
     };
-    }
+  }
 
 
-  const userInfo = {
-    name: req.body.name,
-    username: req.body.username,
-    email: req.body.email,
-    phone: req.body.phone,
-    city: req.body.city,
-    country: req.body.country,
-    age: req.body.age,
-    gender: req.body.gender,
-    picture: 'uploads/' + req.file.filename
-  };
 
 //to here ---------------------------------------------
-  
+
   User.findByIdAndUpdate(req.user._id, userInfo, (err, user)=>{
     res.redirect('/');
   });
@@ -98,16 +90,15 @@ router.get('/:id/deletebook', (req, res, next) => {
   Book.deleteOne({ _id: id }, (err) => {
     if (err) { next(err) }
 
-router.get('/:id/deletebook', (req, res, next) => {
-  const id = req.params.id;
-  Book.deleteOne({ _id: id }, (err) => {
-    if (err) { next(err); }
+// router.get('/:id/deletebook', (req, res, next) => {
+//   const id = req.params.id;
+//   Book.deleteOne({ _id: id }, (err) => {
+//     if (err) { next(err); }
 
- //to here-----------------------------------   
- 
+ //to here-----------------------------------
+
     res.redirect('/');
   });
 });
-
 
 module.exports = router;
