@@ -1,10 +1,12 @@
-* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav, label, input {
+* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav, label, input a {
   padding: 0;
   border: 0;
   margin: 0;
   font-size: 100%;
 
 }
+
+
 
 body {
   font-family: arial, sans-serif;
@@ -592,13 +594,13 @@ color:inherit;
 
 /*----------------------AVAILABLE BOOKS VIEW---------------------*/
 .book-options {
-  color: #65779A;
+  color: #777;
   text-decoration: none;
   font-weight: bold;
 }
 
 .book-options:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
