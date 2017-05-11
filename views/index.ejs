@@ -41,16 +41,17 @@
   <div class="mybooks-wrapper">
 
     <div class="mybooks new">
-      <div class="cover-wrapper">
-        <!-- class="cover" -->
-        <!-- here goes the cover -->
-      </div>
-      <div class="book-list-info">
+
+        <a href="/add-book">
+          <img src="images/add-book.jpg" alt="addBook">
+        </a>
+      
+      <!-- <div class="newbook">
         <ul>
           <br>
           <li><a href="/add-book">Add a New Book</a></li>
         </ul>
-      </div>
+      </div> -->
     </div>
 
 
@@ -70,8 +71,6 @@
         <div class="book-options">
 
           <a href="/<%= book._id %>/edit">Edit</a>
-
-          <a href="#">Free</a>
           <a href="/<%=book._id%>/deletebook">Delete</a>
 
         </div>

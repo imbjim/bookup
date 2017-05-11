@@ -21,13 +21,21 @@ router.get('/add-book', auth.isAuthenticated, (req, res, next) => { //added by e
 // Post Add Book
 
 router.post('/newbook',  auth.isAuthenticated, upload.single('cover'), (req, res, next) => {// added by Imre
-  console.log(req.body.pages)
-  console.log("this is picture", req.body.picture);
+  // console.log(req.body.pages)
+  // console.log("this is picture", req.body.picture);
+
+  var file;
+
+  if(req.file !== undefined) {
+    file = req.file.filename;
+  } else {
+    file = req.body.bookPicture.split("/")[1];
+  }
 
   const bookInfo = {
     title: req.body.title,
     author: req.body.author,
-    picture: 'uploads/' + req.file.filename,      //req.body.picture,
+    picture: 'uploads/' + file,      //req.body.picture,
     description: req.body.description,
     available: req.body.available,
     genre: req.body.genre,
