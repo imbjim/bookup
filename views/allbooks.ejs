@@ -12,7 +12,7 @@
 
 
     <div class="profile-picture-wrapper">
-      <!-- here goes the profile picture -->
+      <img src="<%= user.picture%>" alt="profile-picture" class="profile-picture">
     </div>
     <div class="profile-data-wrapper">
       <ul>
@@ -41,15 +41,15 @@
 <% book.forEach( (book) => { %>
     <div class="mybooks">
       <div class="cover-wrapper">
-        <!-- here goes the cover -->
+        <img src="<%= book.picture%>" alt="book cover picture" class="cover">
       </div>
       <div class="book-list-info">
         <ul>
-          <!-- test -->
+
           <li><%= book.title %></li>
           <li><%= book.author %></li>
           <a class="book-options" href="/book/<%= book._id %>">See Book</a>
-          <!-- test -->
+
         </ul>
       </div>
     </div>
@@ -57,10 +57,3 @@
   </div>
 
 </div>
-
-<!-- <footer class="footer">
-  <div class="footer-wrapper">
-    <p class="footer-quote">“A book lying idle on a shelf is wasted ammunition. Like money, books must be kept in constant circulation... A book is not only a friend, it makes friends for you. When you have possessed a book with mind and spirit, you are enriched. But when you pass it on you are enriched threefold.”</p>
-    <p class="footer-quote-author">Henry Miller</p>
-  </div>
-</footer> -->

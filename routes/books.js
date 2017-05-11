@@ -7,6 +7,9 @@ const auth = require('../helpers/auth');
 const User = require('../models/user');
 const Book = require('../models/book');
 
+
+//Get Add Book
+
 var multer  = require('multer'); //added by Imre
 var upload = multer({ dest: 'public/uploads' });
 
@@ -15,17 +18,32 @@ router.get('/add-book', auth.isAuthenticated, (req, res, next) => { //added by e
   res.render('addbook');
 });
 
-router.post('/newBook',  auth.isAuthenticated, (req, res, next) => {// added by Imre
+// Post Add Book
+
+router.post('/newbook',  auth.isAuthenticated, upload.single('cover'), (req, res, next) => {// added by Imre
+  // console.log(req.body.pages)
+  // console.log("this is picture", req.body.picture);
+
+  var file;
+
+  if(req.file !== undefined) {
+    file = req.file.filename;
+  } else {
+    file = req.body.bookPicture.split("/")[1];
+  }
+
   const bookInfo = {
     title: req.body.title,
     author: req.body.author,
-    cover: req.body.picture,
+    picture: 'uploads/' + file,      //req.body.picture,
     description: req.body.description,
     available: req.body.available,
     genre: req.body.genre,
     pages: req.body.pages,
-    current_user: req.user._id, //preguntar dubtes de perquè no agafa les dades al model mitjançant ObjectId
+    current_user: req.user._id,
   };
+
+// picture: 'uploads/' + req.file.filename,
 
   const newBook = new Book(bookInfo);
   console.log("despues de newBook", newBook);
@@ -33,60 +51,81 @@ router.post('/newBook',  auth.isAuthenticated, (req, res, next) => {// added by 
     if (err) {
       next(err);
     }
+    console.log("alowa")
     res.redirect('/');
   });
 });
 
+//Get Edit Book
 
 
-router.get('/editbook/:id', auth.isAuthenticated, (req, res, next) => { //added by Imre
+
+//becareful with this part from here----------------
+  // Book.findById(req.params.id, (err, book) => {
+  //   if (err) { next(err) }
+
+// router.get('/editbook/:id', auth.isAuthenticated, (req, res, next) => { //added by Imre
+
+router.get('/:id/edit', auth.isAuthenticated, (req, res, next) => { //added by Imre
+
   let user = req.user;
   let bookId= req.params.id;
-  Book.findById({_id: bookId}, (err, book)=>{
+
+  Book.findById({_id: bookId}, (err, book) => {
     if (err) throw err;
 
-      res.render('editbook', { user: user, book : book});
+      res.render('editbook', { user: user, book: book });
 
   });
-
 });
 
+router.post('/:id', upload.single('cover'), (req, res, next) => {// added by Imre
 
-router.post('/editbook', upload.single('cover'), (req, res, next) => {// added by Imre
-  var bookId = req.body.id;
+  // var bookId = req.body.id;
   var file;
-  if(req.file !== undefined){
+
+  if(req.file !== undefined) {
     file = req.file.filename;
   } else {
     file = req.body.bookPicture.split("/")[1];
   }
+
   const bookInfo = {
     title: req.body.title,
     author: req.body.author,
-    cover: req.body.picture,
     description: req.body.description,
     genre: req.body.genre,
     pages: req.body.pages,
     picture: 'uploads/' + file
   };
 
-  Book.findByIdAndUpdate(bookId, bookInfo, (err, book)=>{
+  //becareful with this part from here ----------------
+  console.log(bookInfo);
 
+  Book.findByIdAndUpdate(req.params.id, bookInfo, (err, book) => {
+
+    if (err) {next(err)}
+  // Book.findByIdAndUpdate(bookId, bookInfo, (err, book)=>{
+  //to here ----------------------------
     res.redirect('/');
   });
 });
 
+//Get All Books
+
 router.get('/all-books', auth.isAuthenticated, (req, res, next) => { //added by eduard
   let user = req.user;
+
   Book.find({}, (err, book) => {
     if (err) {
       next(err);
     } else {
-      // console.log(book);
       res.render('allbooks', { book: book, user: user });
     }
   });
 });
+
+//Get Available Books
 
 router.get('/available-books', auth.isAuthenticated, (req, res, next) => { //added by eduard
   let user = req.user;
@@ -97,10 +136,12 @@ router.get('/available-books', auth.isAuthenticated, (req, res, next) => { //add
     } else {
       res.render('availablebooks', { user: user, book: book});
     }
+
   });
 
-  // res.render('availablebooks', { user: user});
-});
+
+  });
+// });
 
 router.get('/:id/showbook', (req, res, next) => {
   let user = req.user;

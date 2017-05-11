@@ -1,4 +1,5 @@
 /*jshint esversion: 6*/
+
 const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
@@ -9,7 +10,7 @@ const bookSchema = new Schema({
   pages: Number,
   description: String,
   picture: String,
-  available: {type: Boolean, required: true},
+  available: Boolean,
   owner: { type: Schema.Types.ObjectId, ref: 'User' },
   current_user: { type: Schema.Types.ObjectId, ref: 'User' }
 }, {
