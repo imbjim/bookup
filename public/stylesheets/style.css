@@ -47,7 +47,7 @@ navbar-wrapper:after {
 .navbar-profile-picture {
   width: 40px;
   height: 40px;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   margin: 10px 10px 0 0;
   background: #ddd;
   float: right;
@@ -80,6 +80,7 @@ navbar-wrapper:after {
 }
 
 .login-container {
+  max-width: 720px;
   height: 400px;
   margin: 0 auto;
 
@@ -98,6 +99,7 @@ navbar-wrapper:after {
   text-align: center;
   font-size: 22px
 }
+
 .form-group p {
   text-align: center;
 }
@@ -130,7 +132,7 @@ navbar-wrapper:after {
 }
 
 .send-button {
-  width: 120px;
+  width: 80px;
   height: 35px;
   margin: 25px auto;
   display: block;
@@ -139,7 +141,7 @@ navbar-wrapper:after {
   color: #fff;
   font-size: 14px;
   background: #7fc857;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   cursor: pointer;
 }
 
@@ -166,7 +168,7 @@ navbar-wrapper:after {
   width: 100%;
   margin: 20px auto;
   background: #495867;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   cursor: pointer;
 }
 
@@ -191,7 +193,7 @@ navbar-wrapper:after {
   width: 100%;
   height: 70px;
   background: #fff;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   margin-bottom: 10px;
   border: 2px solid #eee;
   color: #7fc857;
@@ -250,6 +252,50 @@ body {
 
 /*--------------------EDIT PROFILE-------------------*/
 
+.edit-profile-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.edit-profile-container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.edit-profile-header {
+  padding: 40px 0px 40px 0px;
+  font-size: 20px;
+}
+
+.form-left {
+  width: 40%;
+  border-right: 2px solid #ccc;
+  float: left;
+}
+
+.form-right {
+  width: 40%;
+  float: right;
+}
+
+.profile-form {
+  text-align: left;
+  width: 260px;
+  height: 45px;
+  display: block;
+  padding: 0 10px 0 10px;
+  border-style: solid;
+  border: 2px solid #eee;
+  /*border-radius: 3px 3px 3px 3px;*/
+  background: #fff;
+  /*background: rgba(255, 255, 255, 0.8);*/
+  font-size: 14px;
+  box-sizing: border-box;
+  outline-color: #7fc857;
+  outline-width: 2px;
+}
+
 .upload-file {
   text-align: center;
 }
@@ -259,7 +305,7 @@ body {
 }
 
 .cancel-button {
-  width: 120px;
+  width: 80px;
   height: 35px;
   margin: 25px auto;
   display: block;
@@ -268,8 +314,9 @@ body {
   color: #fff;
   font-size: 14px;
   background: #a32626;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   cursor: pointer;
+  text-decoration: none;
 }
 
 /*----------------------NEW BOOK-------------------*/
@@ -302,8 +349,8 @@ body {
   position: relative;
   display: flex;
   background: #eee;
-  border-bottom: 2px solid #ddd;
-  margin: 10px auto 10px auto;
+  border-bottom: 3px solid #ddd;
+  margin: 10px auto 15px auto;
   padding: 5px 5px 5px 5px;
   box-sizing: border-box;
 }
@@ -320,6 +367,7 @@ body {
   background: #fff;
   border: 3px solid #ccc;
   margin: 15px 7px 10px 15px;
+  padding: 5px;
   overflow: hidden;
   float: left;
   box-sizing: border-box;
@@ -333,7 +381,7 @@ body {
 
 .profile-data-wrapper {
   padding: 0px 7px 0px 7px;
-  border-radius: 4px 4px 4px 4px;
+  /*border-radius: 4px 4px 4px 4px;*/
   margin-top: 15px;
   flex-grow: 1;
   float: left;
@@ -363,7 +411,7 @@ body {
 
 .edit-profile-button {
   font-size: 14px;
-  border-top: 2px solid #777;
+  /*border-top: 2px solid #777;*/
   text-decoration: none;
   color: #7fc857;
   margin: 5px 0px 0px 10px;
@@ -380,10 +428,10 @@ body {
 .books-navbar {
   width: 100%;
   margin: 10px 0px 3px 0px;
-  padding: 2px 5px 2px 5px;
   background: #eee;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 3px solid #ddd;
   box-sizing: border-box;
+  display: flex;
 }
 
 .books-navbar:after {
@@ -402,6 +450,8 @@ body {
   display: block;
   float: left;
   border-right: 2px solid #ddd;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .books-navbar a:last-child {
@@ -409,8 +459,8 @@ body {
 }
 
 .books-navbar a:hover {
-  background: #ededed;
-  color: #7fc857;
+  background: #e3dede;
+  color: #282828;
 }
 
 /*---------------MY BOOKS INSIDE PROFILE---------------*/
@@ -425,7 +475,7 @@ body {
 .mybooks {
   width: 150px;
   height: 260px;
-  margin: 5px 11px;;
+  margin: 10px 11px;;
   background: #eee;
   /*border-radius: 6px 6px 6px 6px;*/
   box-sizing: border-box;
@@ -643,13 +693,6 @@ color:inherit;
     height: 150px;
     margin: 15px 15px 20px 15px;
   }
-
-  .edit-profile-button {
-    border-top: 2px solid #777;
-  }
-  /*.edit-profile-button {
-    margin-left: 50px;
-  }*/
 
   .books-navbar a {
     text-decoration: none;
