@@ -143,5 +143,15 @@ router.get('/available-books', auth.isAuthenticated, (req, res, next) => { //add
   });
 // });
 
+router.get('/:id/showbook', (req, res, next) => {
+  let user = req.user;
+  let bookId= req.params.id;
+  Book.findById({_id: bookId}, (err, book)=>{
+    if (err) throw err;
+
+      res.render('showbook', { user: user, book : book});
+
+  });
+});
 
 module.exports = router;
