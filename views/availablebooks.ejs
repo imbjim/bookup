@@ -21,18 +21,18 @@
         <li><%= user.city %></li>
         <li><%= user.phone %></li>
         <li><%= user.country %></li>
-
       </ul>
+      <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
     </div>
 
   </div>
 
-  <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
+
 
   <nav class="books-navbar">
     <a href="/">My Books</a>
-    <a href="/all-books">All Books</a>
     <a href="/available-books">Available Books</a>
+    <a href="/all-books">All Books</a>
     <a href="/messages">Messages</a>
   </nav>
 
@@ -48,6 +48,7 @@
         <ul>
           <li><%= book.title %></li>
           <li><%= book.author %></li>
+          <a class="show-book" href="/book/<%= book._id %>">See Book</a>
         </ul>
       </div>
     </div>

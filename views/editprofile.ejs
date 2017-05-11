@@ -19,14 +19,12 @@
           <input type="text" class="basic-form" id="country" name="country" value="<%= user.country %>" placeholder="country">
           <input type="number" class="basic-form" id="age" name="age" value="<%= user.age %>" placeholder="age">
           <input type="text" class="basic-form" id="gender" name="gender" value="<%= user.gender %>"  placeholder="gender">
-          <label for="image">Upload a profile image</label>
+          <div class="upload-file">
+            <label for="image">Upload a profile image</label>
+            <input type="file" class="upload" id="profile_image" name="profile_image" value="">
+          </div>
 
 
-          <input type="file" class="upload" id="profile_image" name="profile_image" value=""> <!-- added by Imre -->
-          <!-- <a href="/uploadimage">Upload image</a> -->
-          <!-- <input type="text" class="form-new-account" name="image" placeholder="upload image"> -->
-          <!-- <input type="password" class="basic-form" name="password" placeholder="password">
-          <input type="password" class="basic-form" name="new-password" placeholder=" new password"> -->
         </div>
         <button type="submit" class="send-button">Save</button>
 

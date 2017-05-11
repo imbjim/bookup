@@ -21,18 +21,16 @@
         <li><%= user.city %></li>
         <li><%= user.phone %></li>
         <li><%= user.country %></li>
-
       </ul>
+      <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
     </div>
 
   </div>
 
-  <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
-
   <nav class="books-navbar">
-    <a href="/">My Books</a>
-    <a href="/all-books">All Books</a>
+    <a>My Books</a>
     <a href="/available-books">Available Books</a>
+    <a href="/all-books">All Books</a>
     <a href="/messages">Messages</a>
   </nav>
 
@@ -45,22 +43,22 @@
         <a href="/add-book">
           <img src="images/add-book.jpg" alt="addBook">
         </a>
-      
-      <!-- <div class="newbook">
-        <ul>
-          <br>
-          <li><a href="/add-book">Add a New Book</a></li>
-        </ul>
-      </div> -->
+
     </div>
 
 
 <% books.forEach((book) => { %>
  <% if (user._id.equals(book.current_user)) { %>
     <div class="mybooks">
-      <div class="cover-wrapper">
-        <img src="<%= book.picture%>" alt="book cover picture" class="cover">
-      </div>
+
+      <a class="book-link" href="/<%=book._id%>/showbook">
+        <div class="cover-wrapper">
+
+          <img src="<%= book.picture%>" alt="book cover picture" class="cover">
+
+        </div>
+      </a>
+
       <div class="book-list-info">
         <ul>
           <li><%= book.title %></li>
@@ -72,7 +70,7 @@
 
 
           <a href="/<%= book._id %>/edit">Edit</a>
-          <a href="/<%=book._id%>/showbook">Show</a>
+          <!-- <a href="/<%=book._id%>/showbook">Show</a> -->
           <a href="/<%=book._id%>/deletebook">Delete</a>
 
         </div>
