@@ -16,12 +16,14 @@ const expressLayouts = require('express-ejs-layouts');
 
 const User = require('./models/user');
 const Book = require('./models/book');//added by Imre
+const Message = require('./models/message');
 
 // routes
 var index = require('./routes/index');
 var auth = require('./routes/auth');
 var users = require('./routes/users');
 var books = require('./routes/books'); //added by Imre
+var messages = require('./routes/messages');
 
 
 const mongoose = require("mongoose");
@@ -85,6 +87,7 @@ app.use(passport.session());
 
 app.use('/', index);
 app.use('/', auth);
+app.use('/', messages);
 app.use('/', books);
 app.use('/users', users);
 

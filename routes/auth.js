@@ -9,6 +9,7 @@ const bcryptSalt = 10;
 
 const User = require('../models/user');
 const Book = require('../models/book');
+const Message = require('../models/message');
 
 /* GET users listing. */
 router.get('/signup', function(req, res, next) {

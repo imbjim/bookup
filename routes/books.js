@@ -51,7 +51,6 @@ router.post('/newbook',  auth.isAuthenticated, upload.single('cover'), (req, res
     if (err) {
       next(err);
     }
-    console.log("alowa")
     res.redirect('/');
   });
 });

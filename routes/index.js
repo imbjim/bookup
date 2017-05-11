@@ -15,7 +15,7 @@ var upload = multer({ dest: 'public/uploads' });
 
 router.get('/', auth.isAuthenticated, (req, res, next) => {
   console.log("in here")
-  
+
   let user = req.user;
 
     Book.find({}, (err, books) => {
@@ -88,7 +88,7 @@ router.post('/edit', auth.isAuthenticated, upload.single('profile_image'), (req,
 router.get('/:id/deletebook', (req, res, next) => {
   const id = req.params.id;
   Book.deleteOne({ _id: id }, (err) => {
-    if (err) { next(err) }
+    if (err) { next(err); }
 
 // router.get('/:id/deletebook', (req, res, next) => {
 //   const id = req.params.id;

@@ -1,3 +1,5 @@
+/*jshint esversion: 6*/
+
 const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
@@ -12,7 +14,8 @@ const userSchema = new Schema({
   age: Number,// added by Imre
   gender: String,// added by Imre
   picture: String,// added by Imre
-  books: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
+  books: [{ type: Schema.Types.ObjectId, ref: 'Book' }],
+  messages: [{ type: Schema.Types.ObjectId, ref: 'Message' }]
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
