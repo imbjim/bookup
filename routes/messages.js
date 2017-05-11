@@ -11,17 +11,76 @@ const Message = require('../models/message');
 var multer  = require('multer'); //added by Imre
 var upload = multer({ dest: 'public/uploads' });
 
-router.get('/messages', auth.isAuthenticated, (req, res, next) => { 
-  let user = req.user;
-  Message.find({}, (err, message) => {
-    if (err) {
-      next(err);
-    } else {
-      console.log(message);
-      res.render('messages', { message: message, user: user });
-    }
+router.get('/messages', auth.isAuthenticated, (req, res, next) => {
+  // User
+  // .findOne({_id: req.session.passport.user})
+  // .populate("messages")
+  // .exec((err, user)=>{
+  //   if (err) {
+  //     next (err);
+  //     return;
+  //   }
+    Message
+    .find({receiver: req.session.passport.user})
+    .populate("book")
+    .populate("sender")
+    .exec((err, message)=>{
+      if (err) {
+        next (err);
+        return;
+      }
+      res.render('messages', { message});
+    });
+
+});
+
+router.get('/sendmessage/:id', auth.isAuthenticated, (req, res, next) => {
+  let bookId = req.params.id;
+  Book.findById({_id: bookId}, (err, book) => {
+    if (err) throw err;
+    console.log(book);
+      res.render('sendmessage', { book: book });
   });
 });
 
 
+router.post('/sendmessage',  auth.isAuthenticated, (req, res, next) => {
+const messageInfo = {
+  subject: req.body.subject,
+  body: req.body.body,
+  book: req.body.bookId,
+  sender: req.session.passport.user,
+  receiver: req.body.ownerId
+};
+
+const newMessage = new Message(messageInfo);
+
+newMessage.save( (err, message) => {
+  if (err) {
+    next(err);
+  } else {
+        User.findByIdAndUpdate({_id: req.body.ownerId}, {$push: {messages: message._id}}, (err, user) => {
+      if (err) {next (err);
+      } else {
+        User.findByIdAndUpdate({_id: req.session.passport.user}, {$push: {messages: message._id}}, (err, user) => {
+              if (err) {next (err);
+              } else {
+            res.redirect('/');
+              }
+            });
+      }
+
+    });
+}
+});
+});
+
+router.get('/sendmessagetosender/:id', auth.isAuthenticated, (req, res, next) => {
+
+});
+
+
+router.post('/sendmessagetosender',  auth.isAuthenticated, (req, res, next) => {
+
+});
 module.exports = router;

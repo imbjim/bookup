@@ -529,6 +529,40 @@ body {
   margin-bottom: 1rem;
 }
 
+/*----------------------MESSAGES VIEW---------------------*/
+.messages {
+  font: bold;
+  border-bottom: 1px solid gray;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  color: #696969;
+}
+
+.messages ul {
+  list-style-type: none;
+}
+
+.messages a {
+color:inherit;
+}
+
+.messages span {
+  font-weight: bolder;
+  color: #282828;
+}
+
+/*----------------------AVAILABLE BOOKS VIEW---------------------*/
+.book-options {
+  color: #65779A;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.book-options:hover {
+  text-decoration: underline;
+}
+
+
 /*--------------MEDIA QUERIES------------*/
 
 @media (min-width: 500px) {

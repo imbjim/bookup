@@ -5,15 +5,17 @@
     <a href="/" class="navbar-button navbar-button-left">Home</a>
   </div>
 </nav>
-<div class="login-container">
+<div class="container">
 
   <div class="mybooks-wrapper">
 <% message.forEach( (message) => { %>
-    <div class="mybooks">
-      <div class="book-list-info">
+    <div class="messages">
+      <div class="messages-list">
         <ul>
-          <li><%= message.senderName %></li>
-          <li><%= message.subject %></li>
+          <li> <span>Message from: </span> <a href="/sendmessagetosender"><%= message.sender.name %></a></li>
+          <li> <span>Book: </span> <%= message.book.title %></li>
+          <li> <span>Subject: </span> <%= message.subject %></li>
+          <li> <span> Message: </span> <%= message.body %></li>
         </ul>
       </div>
     </div>

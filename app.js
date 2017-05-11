@@ -87,8 +87,8 @@ app.use(passport.session());
 
 app.use('/', index);
 app.use('/', auth);
-app.use('/', books);
 app.use('/', messages);
+app.use('/', books);
 app.use('/users', users);
 
 
