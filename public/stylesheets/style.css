@@ -1,4 +1,4 @@
-* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav, label {
+* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav, label, input {
   padding: 0;
   border: 0;
   margin: 0;
@@ -113,7 +113,7 @@ navbar-wrapper:after {
   padding: 0 10px 0 10px;
   border-style: solid;
   border: 2px solid #eee;
-  border-radius: 3px 3px 3px 3px;
+  /*border-radius: 3px 3px 3px 3px;*/
   background: #fff;
   /*background: rgba(255, 255, 255, 0.8);*/
   font-size: 14px;
@@ -125,10 +125,6 @@ navbar-wrapper:after {
 .add-file {
   text-align: center;
   margin: 30px;
-}
-
-.upload {
-
 }
 
 .send-button {
@@ -230,41 +226,11 @@ body {
   height: 100%;
 }*/
 
-.footer {
-  visibility: hidden;
-  margin-top: 200px;
-  /*bottom: 70px;*/
-  width: 100%;
-  /*height: 140px;*/
-  color: #aaa;
-  background: #282828;
-  /*display: flex;
-  flex-direction: column;*/
-  display: table-row;
-}
-
-.footer-wrapper {
-  max-width: 700px;
-  width: 70%;
-  margin: 30px auto;
-  flex-grow: 1;
-}
-
-.footer-quote {
-  font-size: 14px;
-  font-style: italic;
-}
-
-.footer-quote-author {
-  float: right;
-  margin-right: 40px;
-  margin-top: 10px;
-  font-style: italic;
-  font-size: 14px;
-}
-
-
 /*---------------------NEW ACCOUNT-------------------*/
+
+/*.form-wrapper {
+
+}*/
 
 .new-account-header {
   width: 320px;
@@ -280,6 +246,30 @@ body {
   font-size: 15px
 }
 
+/*--------------------EDIT PROFILE-------------------*/
+
+.upload-file {
+  text-align: center;
+}
+
+.upload-file label input{
+  display: block;
+}
+
+.cancel-button {
+  width: 120px;
+  height: 35px;
+  margin: 25px auto;
+  display: block;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  background: #a32626;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+}
+
 /*----------------------NEW BOOK-------------------*/
 
 .description-form {
@@ -290,7 +280,7 @@ body {
   padding: 5px 10px 5px 10px;
   border-style: solid;
   border: 2px solid #eee;
-  border-radius: 3px 3px 3px 3px;
+  /*border-radius: 3px 3px 3px 3px;*/
   background: #fff;
   /*background: rgba(255, 255, 255, 0.8);*/
   font-size: 14px;
@@ -305,9 +295,15 @@ body {
 /*----------------------PROFILE---------------------*/
 
 .profile-wrapper {
-  width: 90%;
-  margin-top: 20px;
+  width: 100%;
+  height: auto;
   position: relative;
+  display: flex;
+  background: #eee;
+  border-bottom: 2px solid #ddd;
+  margin: 10px auto 10px auto;
+  padding: 5px 5px 5px 5px;
+  box-sizing: border-box;
 }
 
 .profile-wrapper:after {
@@ -319,65 +315,61 @@ body {
 .profile-picture-wrapper {
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.3);
-  border: 2px solid #7fc857;
-  margin: 7px 7px 10px 15px;
-  border-radius: 4px 4px 4px 4px;
+  background: #fff;
+  border: 3px solid #ccc;
+  margin: 15px 7px 10px 15px;
+  overflow: hidden;
   float: left;
   box-sizing: border-box;
+  display: flex;
 }
 
 .profile-picture {
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  margin: auto;
 }
 
 .profile-data-wrapper {
-  /*min-height: 150px;*/
   padding: 0px 7px 0px 7px;
   border-radius: 4px 4px 4px 4px;
-  margin-top: 5px;
-  box-sizing: border-box;
+  margin-top: 15px;
+  flex-grow: 1;
   float: left;
 }
 
 .profile-data-wrapper li:first-child {
   font-size: 16px;
   font-weight: bold;
-  border-bottom: 1px solid #666;
-  margin-bottom: 5px;
+  /*border-bottom: 2px solid #ddd;*/
+  margin-bottom: 7px;
 }
 
 .profile-data-wrapper ul {
   list-style-type: none;
+  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
 .profile-data-wrapper li {
   width: 100%;
   font-size: 14px;
   margin-top: 0px;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   /*border-bottom: 1px dashed #aaa;*/
   line-height: 13px;
 }
 
 .edit-profile-button {
-  height: 30px;
-  widht: 100px;
-  background: #7fc857;
-  padding: 7px;
-  border-radius: 4px 4px 4px 4px;
-  color: #fff;
+  font-size: 14px;
+  border-top: 2px solid #777;
   text-decoration: none;
-  margin-top: 5px;
-  margin-left: 19px;
-  font-size: 12px;
-  box-sizing: border-box;
-  cursor: pointer;
+  color: #7fc857;
+  margin: 5px 0px 0px 10px;
+  padding: 5px 0px 5px 0px;
 }
 
 .edit-profile-button:hover {
-  background: #96d971;
+  color: #555;
 }
 
 /*---------------------BOOKS NAVBAR--------------------*/
@@ -385,8 +377,11 @@ body {
 
 .books-navbar {
   width: 100%;
-  margin: 30px 0px 3px 0px;
-
+  margin: 10px 0px 3px 0px;
+  padding: 2px 5px 2px 5px;
+  background: #eee;
+  border-bottom: 2px solid #ddd;
+  box-sizing: border-box;
 }
 
 .books-navbar:after {
@@ -399,15 +394,20 @@ body {
   text-decoration: none;
   padding: 10px 7px 10px 7px;
   box-sizing: border-box;
-  /*background: #282828;*/
-  font-size: 14px;
+  background: #eee;
+  font-size: 13px;
   color: #282828;
   display: block;
   float: left;
+  border-right: 2px solid #ddd;
+}
+
+.books-navbar a:last-child {
+  border-right: none;
 }
 
 .books-navbar a:hover {
-  /*background: #424141;*/
+  background: #ededed;
   color: #7fc857;
 }
 
@@ -416,18 +416,21 @@ body {
 .mybooks-wrapper {
   width: 100%;
   margin: 0px auto;
-  border-top: 2px solid #666;
+  /*border-top: 2px solid #666;*/
   padding-top: 10px;
 }
 
 .mybooks {
   width: 150px;
   height: 260px;
-  margin: 10px 11px;;
+  margin: 5px 11px;;
   background: #eee;
   /*border-radius: 6px 6px 6px 6px;*/
   box-sizing: border-box;
   float: left;
+  border-bottom: 3px solid #ddd;
+  display: flex;
+  flex-direction: column;
 }
 
 .mybooks:after {
@@ -441,75 +444,110 @@ body {
 }
 
 .new a {
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 
 .cover-wrapper {
   width: 100%;
   height: 180px;
-  background: #bbb;
+  background: #eee;
   float: left;
   box-sizing: border-box;
-  margin-bottom: 10px;
   overflow: hidden;
   display: flex;
   cursor: pointer;
 }
 
 .cover-wrapper img {
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  text-align: center;
-  -ms-align-items: center;
-  margin: auto;
+
 }
 
 .cover {
   width: 98%;
   margin: 0 auto;
-  height: 100%;
+  max-width: 100%;
+  margin: auto;
+  /*overflow: hidden;*/
 }
 
 .book-list-info {
   position: relative;
+  padding: 10px 15px 10px 15px;
 }
 
-.book-list-info ul {
-  list-style-type: none;
-  text-align: center;
-}
+.book-list-info h1 {
 
-.book-list-info li {
+  text-align: left;
   width: 100%;
   font-size: 13px;
-  margin-bottom: 3px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.book-list-info h2 {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.book-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.book-link:hover {
+  color: #777;
 }
 
 .book-options {
   font-size: 13px;
-  text-align: center;
-  margin-top: 6px;
-  padding-bottom: 7px;
+  text-align: left;
+  padding: 10px 10px 7px 0px;
+  display: flex;
 }
 
 .book-options a {
   text-decoration: none;
-  margin-left: 5px;
 }
 
 .book-options a:first-child {
-  color: #7fc857;
-  font-weight: bolder;
+  color: #333;
   margin-right: 5px;
+  padding-right: 10px;
+  border-right: 1px solid #aaa;
 }
 
-.book-options a:nth-child(2) {
-  color: #282828;
+.book-options a:first-child:hover {
+  color: #777;
 }
 
 .book-options a:last-child {
   color: rgb(171, 4, 34);
+}
+
+.book-options a:last-child:hover {
+  color: rgb(207, 50, 77);
+}
+
+.show-book {
+  font-size: 13px;
+  text-align: left;
+  margin-top: 10px;
+  padding: 0px 10px 7px 0px;
+  text-decoration: none;
+  color: #333;
+}
+
+.show-book a {
+  color: #333;
+}
+
+.show-book a:hover{
+  color: #777;
 }
 
 /*---------------EDIT BOOK VIEW---------------*/
@@ -529,7 +567,10 @@ body {
   margin-bottom: 1rem;
 }
 
-/*--------------MEDIA QUERIES------------*/
+
+/*//////////////////////////////////////////////////////////////*/
+/*--------------MEDIA QUERIES-------------------------------*/
+/*//////////////////////////////////////////////////////////////*/
 
 @media (min-width: 500px) {
   .footer {
@@ -551,7 +592,7 @@ body {
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 7px;
-    border-bottom: 1px solid #666;
+    /*border-bottom: 2px solid #666;*/
   }
   .profile-data-wrapper li {
     font-size: 14px;
@@ -563,12 +604,14 @@ body {
     width: 150px;
     height: 150px;
     margin: 15px 15px 20px 15px;
-    padding: 5px 5px 5px 5px;
   }
 
   .edit-profile-button {
-    margin-left: 50px;
+    border-top: 2px solid #777;
   }
+  /*.edit-profile-button {
+    margin-left: 50px;
+  }*/
 
   .books-navbar a {
     text-decoration: none;

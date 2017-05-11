@@ -11,7 +11,13 @@
   <div class="profile-wrapper">
 
     <div class="profile-picture-wrapper">
-      <img src="<%= user.picture%>" alt="profile-picture" class="profile-picture">
+      <% if (!user.picture) { %>
+        <img src="/images/profile_default.jpg" alt="profile-picture" class="profile-picture">
+      <% } else if (user.picture == "uploads/undefined") { %>
+        <img src="/images/profile_default.jpg" alt="profile-picture" class="profile-picture">
+      <% } else { %>
+        <img src="<%= user.picture%>" alt="profile-picture" class="profile-picture">
+      <% } %>
     </div>
     <div class="profile-data-wrapper">
       <ul>
@@ -21,18 +27,18 @@
         <li><%= user.city %></li>
         <li><%= user.phone %></li>
         <li><%= user.country %></li>
-
       </ul>
+      <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
     </div>
 
   </div>
 
-  <a class="edit-profile-button" href="/edit-profile">Edit Profile</a>
+
 
   <nav class="books-navbar">
     <a href="/">My Books</a>
-    <a href="/all-books">All Books</a>
     <a href="/available-books">Available Books</a>
+    <a href="/all-books">All Books</a>
     <a href="/messages">Messages</a>
   </nav>
 
@@ -41,15 +47,26 @@
   <% book.forEach((book) => { %>
     <% if (book.available === true) { %>
     <div class="mybooks">
+
       <div class="cover-wrapper">
-        <img src="<%= book.picture%>" alt="book cover picture" class="cover">
+        <a class="book-link" href="/<%=book._id%>/showbook">
+          <% if (!book.picture) { %>
+            <img src="/images/book_default.jpg" alt="book cover picture" class="cover">
+          <% } else if (book.picture == "uploads/undefined"){ %>
+            <img src="/images/book_default.jpg" alt="book cover picture" class="cover">
+          <% } else { %>
+            <img src="<%= book.picture%>" alt="" class="cover">
+          <% } %>
+        </a>
       </div>
+
       <div class="book-list-info">
-        <ul>
-          <li><%= book.title %></li>
-          <li><%= book.author %></li>
-        </ul>
+        <a class="book-link" href="/<%=book._id%>/showbook">
+          <h1><%= book.title %></h1>
+          <h2><%= book.author %></h2>
+        </a>
       </div>
+
     </div>
 
     <% } %>
