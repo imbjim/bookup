@@ -16,6 +16,9 @@
           <li> <span>Book: </span> <%= message.book.title %></li>
           <li> <span>Subject: </span> <%= message.subject %></li>
           <li> <span> Message: </span> <%= message.body %></li>
+          <div class="delete-message-button" id="sentmessages-delete">
+            <a href="/<%=message._id%>/deleteinboxmessage">Delete</a>
+          </div>
         </ul>
       </div>
     </div>
