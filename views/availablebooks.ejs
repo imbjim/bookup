@@ -37,7 +37,7 @@
 
   <nav class="books-navbar">
     <a href="/">My Books</a>
-    <a href="/available-books">Available Books</a>
+    <p>Available Books</p>
     <a href="/all-books">All Books</a>
     <a href="/messages">Messages</a>
   </nav>
@@ -66,13 +66,14 @@
         <a class="book-link" href="/<%=book._id%>/showbook">
           <h1><%= book.title %></h1>
           <h2><%= book.author %></h2>
-          <a class="book-options" href="/sendmessage/<%= book._id %>">Contact</a>
         </a>
+        <div class="book-contact">
+          <a href="/sendmessage/<%= book._id %>">Contact</a>
+        </div>
 
       </div>
 
     </div>
-
     <% } %>
   <% }); %>
 
