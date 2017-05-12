@@ -90,6 +90,7 @@ router.get('/:id/deletebook', (req, res, next) => {
   });
 });
 
+
 //Get Delete Profile
 
 router.get('/:id/deleteprofile', (req, res, next) => {
@@ -101,5 +102,6 @@ router.get('/:id/deleteprofile', (req, res, next) => {
     res.redirect('/login');
   });
 });
+
 
 module.exports = router;
