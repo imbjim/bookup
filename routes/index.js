@@ -14,7 +14,6 @@ var upload = multer({ dest: 'public/uploads' });
 //Get home page
 
 router.get('/', auth.isAuthenticated, (req, res, next) => {
-  console.log("in here")
 
   let user = req.user;
 
@@ -41,7 +40,6 @@ router.get('/edit-profile', auth.isAuthenticated, (req, res, next) => {
 
 router.post('/edit', auth.isAuthenticated, upload.single('profile_image'), (req, res, next) => {
 
-  //becareful with this part but i think it works from here----------------------
 
   let userInfo;
 
@@ -74,14 +72,11 @@ router.post('/edit', auth.isAuthenticated, upload.single('profile_image'), (req,
 
 
 
-//to here ---------------------------------------------
-
   User.findByIdAndUpdate(req.user._id, userInfo, (err, user)=>{
     res.redirect('/');
   });
 });
 
-//becareful with this part but i think it works from here---------
 
 //Get Delete Book
 
@@ -90,14 +85,20 @@ router.get('/:id/deletebook', (req, res, next) => {
   Book.deleteOne({ _id: id }, (err) => {
     if (err) { next(err); }
 
-// router.get('/:id/deletebook', (req, res, next) => {
-//   const id = req.params.id;
-//   Book.deleteOne({ _id: id }, (err) => {
-//     if (err) { next(err); }
-
- //to here-----------------------------------
 
     res.redirect('/');
+  });
+});
+
+//Get Delete Profile
+
+router.get('/:id/deleteprofile', (req, res, next) => {
+  const id = req.params.id;
+  console.log(id);
+  User.deleteOne({ _id: id }, (err) => {
+    if (err) { next(err); }
+
+    res.redirect('/login');
   });
 });
 
