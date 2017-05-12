@@ -14,7 +14,6 @@ var upload = multer({ dest: 'public/uploads' });
 //Get home page
 
 router.get('/', auth.isAuthenticated, (req, res, next) => {
-  console.log("in here")
 
   let user = req.user;
 
@@ -100,5 +99,6 @@ router.get('/:id/deletebook', (req, res, next) => {
     res.redirect('/');
   });
 });
+
 
 module.exports = router;
