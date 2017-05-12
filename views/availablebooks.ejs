@@ -45,7 +45,8 @@
   <div class="mybooks-wrapper">
 
   <% book.forEach((book) => { %>
-    <% if (book.available === true) { %>
+    <% if (book.available === true && !(user._id.equals(book.current_user))) { %>
+
     <div class="mybooks">
 
       <div class="cover-wrapper">

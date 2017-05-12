@@ -26,6 +26,11 @@
           <input type="text" class="basic-form" name="pages" placeholder="number of pages" value="<%= book.pages %>">
           <label for="Description">Description</label>
           <textarea class="description-form" name="name" placeholder="description" value="<%= book.description %>"></textarea>
+          <div class="available-check">
+            <label for="available">This book will be shared</label> <br>
+              <input type="radio" name="available" value="1" required="" checked="checked"> Yes <br>
+              <input type="radio" name="available" value="0" required="" > No <br>
+          </div>
 
           <label for="cover">Upload cover</label>
           <input type="file" class="basic-form upload-button" name="cover" id="cover" placeholder="upload cover" value="<%= book.cover %>">
