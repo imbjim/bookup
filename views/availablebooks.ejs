@@ -1,10 +1,11 @@
 <nav class="navbar">
   <div class="navbar-wrapper">
     <h3 class="brand">bookup</h3>
-    <a href="/logout" class="navbar-button nabvar-button-right">Logout</a>
-    <!-- <a href="/" class="navbar-button navbar-button-left">Home</a> -->
+      <a href="/logout" class="navbar-button nabvar-button-right">Logout</a>
+      <!-- <a href="/" class="navbar-button navbar-button-left">Home</a> -->
   </div>
 </nav>
+
 <div class="container">
 
   <div class="profile-wrapper">
@@ -32,64 +33,52 @@
 
   </div>
 
+
+
   <nav class="books-navbar">
-    <p>My Books</p>
-    <a href="/available-books">Available Books</a>
+    <a href="/">My Books</a>
+    <p>Available Books</p>
     <a href="/all-books">All Books</a>
     <a href="/inbox">Inbox</a>
     <a href="/sentmessages">Sent messages</a>
   </nav>
 
-
-
   <div class="mybooks-wrapper">
 
-    <div class="mybooks new">
+  <% book.forEach((book) => { %>
+    <% if (book.available === true && !(user._id.equals(book.current_user))) { %>
 
-        <a href="/add-book">
-          <img src="images/add-book.jpg" alt="addBook">
-        </a>
-
-    </div>
-
-
-<% books.forEach((book) => { %>
- <% if (user._id.equals(book.current_user)) { %>
     <div class="mybooks">
 
-          <div class="cover-wrapper" >
-            <a class="book-link" href="/<%=book._id%>/showbook">
-
-              <% if (!book.picture) { %>
-                <img src="/images/book_default.jpg" alt="book cover picture" class="cover">
-              <% } else if (book.picture == "uploads/undefined"){ %>
-                <img src="/images/book_default.jpg" alt="book cover picture" class="cover">
-              <% } else { %>
-                <img src="<%= book.picture%>" alt="" class="cover">
-              <% } %>
-
-            </a>
-          </div>
+      <div class="cover-wrapper">
+        <a class="book-link" href="/<%=book._id%>/showbook">
+          <% if (!book.picture) { %>
+            <img src="/images/book_default.jpg" alt="book cover picture" class="cover">
+          <% } else if (book.picture == "uploads/undefined"){ %>
+            <img src="/images/book_default.jpg" alt="book cover picture" class="cover">
+          <% } else { %>
+            <img src="<%= book.picture%>" alt="" class="cover">
+          <% } %>
+        </a>
+      </div>
 
       <div class="book-list-info">
+
+
         <a class="book-link" href="/<%=book._id%>/showbook">
           <h1><%= book.title %></h1>
           <h2><%= book.author %></h2>
         </a>
-        <div class="book-options">
-          <a href="/<%= book._id %>/edit">Edit</a>
-          <a href="/<%= book._id %>/sharebook">Share</a>
-          <!-- <a href="/<%=book._id%>/showbook">Show</a> -->
-          <a href="/<%=book._id%>/deletebook">Delete</a>
+        <div class="book-contact">
+          <a href="/sendmessage/<%= book._id %>">Contact</a>
         </div>
+
       </div>
 
     </div>
-    <% }; %>
-
-<% }); %>
+    <% } %>
+  <% }); %>
 
   </div>
-
 
 </div>

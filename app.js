@@ -1,20 +1,29 @@
+/*jshint esversion: 6*/
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var multer  = require('multer'); //added by Imre
+
 const session       = require("express-session");
 const bcrypt        = require("bcrypt");
 const passport      = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+const expressLayouts = require('express-ejs-layouts');
 
 const User = require('./models/user');
+const Book = require('./models/book');//added by Imre
+const Message = require('./models/message');
 
 // routes
 var index = require('./routes/index');
 var auth = require('./routes/auth');
 var users = require('./routes/users');
+var books = require('./routes/books'); //added by Imre
+var messages = require('./routes/messages');
 
 
 const mongoose = require("mongoose");
@@ -24,6 +33,8 @@ mongoose.connect("mongodb://localhost:27017/bookup");
 var app = express();
 
 // view engine setup
+app.use(expressLayouts);
+app.set('layout', 'layouts/main-layout');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -68,11 +79,16 @@ passport.use(new LocalStrategy((username, password, next) => {
   });
 }));
 
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 app.use('/', index);
 app.use('/', auth);
+app.use('/', messages);
+app.use('/', books);
 app.use('/users', users);
 
 
