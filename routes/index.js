@@ -6,6 +6,7 @@ var router = express.Router();
 const auth = require('../helpers/auth');
 const User = require('../models/user');
 const Book = require('../models/book');
+const Message = require('../models/message');
 
 var multer  = require('multer'); //added by Imre
 var upload = multer({ dest: 'public/uploads' });
@@ -99,6 +100,31 @@ router.get('/:id/deleteprofile', (req, res, next) => {
     if (err) { next(err); }
 
     res.redirect('/login');
+  });
+});
+
+
+//Get Delete Message from Inbox
+
+router.get('/:id/deleteinboxmessage', (req, res, next) => {
+  const id = req.params.id;
+  console.log(id);
+  Message.deleteOne({ _id: id }, (err) => {
+    if (err) { next(err); }
+
+    res.redirect('/inbox');
+  });
+});
+
+//Get Delete Message from Sent Messages
+
+router.get('/:id/deletemessage', (req, res, next) => {
+  const id = req.params.id;
+  console.log(id);
+  Message.deleteOne({ _id: id }, (err) => {
+    if (err) { next(err); }
+
+    res.redirect('/sentmessages');
   });
 });
 
