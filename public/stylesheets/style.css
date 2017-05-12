@@ -1,14 +1,15 @@
-* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav, label, input {
+* body, div, span, h1, h2, h3, h4, ul, ol, li, p, nav, label, input a {
   padding: 0;
   border: 0;
   margin: 0;
   font-size: 100%;
-
 }
+
+
 
 body {
   font-family: arial, sans-serif;
-  background: #fff;
+  background: #f1f1f1;
   /*background-image: url("../images/book-blur.jpg");*/
 }
 
@@ -17,9 +18,6 @@ body {
   height: 60px;
   margin: 0 0 20px 0;
   background: #282828;
-  /*border-bottom: 4px solid #474646;*/
-  /*background: #7fc857;
-  border-bottom: 4px solid #96d971;*/
 }
 
 .navbar-wrapper {
@@ -45,7 +43,7 @@ navbar-wrapper:after {
 .navbar-profile-picture {
   width: 40px;
   height: 40px;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   margin: 10px 10px 0 0;
   background: #ddd;
   float: right;
@@ -78,6 +76,7 @@ navbar-wrapper:after {
 }
 
 .login-container {
+  max-width: 720px;
   height: 400px;
   margin: 0 auto;
 
@@ -85,9 +84,10 @@ navbar-wrapper:after {
 
 .welcome-message {
   width: 320px;
-  margin: 60px auto 40px auto;
+  margin: 0 auto;
+  padding-bottom: 10px;
   text-align: center;
-  font-size: 25px
+  font-size: 22px
 }
 
 .home-message {
@@ -96,6 +96,7 @@ navbar-wrapper:after {
   text-align: center;
   font-size: 22px
 }
+
 .form-group p {
   text-align: center;
 }
@@ -112,13 +113,13 @@ navbar-wrapper:after {
   margin: 10px auto 0 auto;
   padding: 0 10px 0 10px;
   border-style: solid;
-  border: 2px solid #eee;
+  border: 1px solid #ddd;
   /*border-radius: 3px 3px 3px 3px;*/
-  background: #fff;
+  background: #efefef;
   /*background: rgba(255, 255, 255, 0.8);*/
   font-size: 14px;
   box-sizing: border-box;
-  outline-color: #7fc857;
+  outline-color: #2d69b0;
   outline-width: 2px;
 }
 
@@ -128,7 +129,7 @@ navbar-wrapper:after {
 }
 
 .send-button {
-  width: 120px;
+  width: 80px;
   height: 35px;
   margin: 25px auto;
   display: block;
@@ -137,7 +138,7 @@ navbar-wrapper:after {
   color: #fff;
   font-size: 14px;
   background: #7fc857;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   cursor: pointer;
 }
 
@@ -164,7 +165,7 @@ navbar-wrapper:after {
   width: 100%;
   margin: 20px auto;
   background: #495867;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   cursor: pointer;
 }
 
@@ -189,10 +190,10 @@ navbar-wrapper:after {
   width: 100%;
   height: 70px;
   background: #fff;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   margin-bottom: 10px;
   border: 2px solid #eee;
-  color: #7fc857;
+  color: #2d69b0;
   display: block;
   padding: 40px;
   text-align: center;
@@ -214,23 +215,36 @@ navbar-wrapper:after {
 
 /*------------------------HOME--------------*/
 
-html, body {
+/*html, body {
   height: 100%;
   width: 100%;
 }
 
 body {
   display: table;
-}
+}*/
 /*.footer, html, body {
   height: 100%;
 }*/
 
 /*---------------------NEW ACCOUNT-------------------*/
 
-/*.form-wrapper {
+.welcome-box {
+  width: 70%;
+  margin: 15px auto 10px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+}
 
-}*/
+.form-wrapper {
+  width: 70%;
+  margin: 10px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+
+}
 
 .new-account-header {
   width: 320px;
@@ -248,29 +262,80 @@ body {
 
 /*--------------------EDIT PROFILE-------------------*/
 
-.upload-file {
+.edit-header-box {
+  width: 70%;
+  margin: 15px auto 10px auto;
+  padding: 30px 20px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  /*box-sizing: border-box;*/
+}
+
+.edit-profile-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/*.edit-profile-container:after {
+  content: "";
+  display: block;
+  clear: both;
+}*/
+
+.edit-profile-header {
+
+  font-size: 20px;
   text-align: center;
 }
 
-.upload-file label input{
+.upload-file {
+  text-align: center;
+  padding: 20px;
+}
+
+.upload-file label{
   display: block;
+}
+
+.upload-button {
+  border: none;
+  outline: none;
 }
 
 .cancel-button {
-  width: 120px;
+  width: 80px;
   height: 35px;
-  margin: 25px auto;
+  margin: 10px auto;
   display: block;
   outline: none;
   border: none;
-  color: #fff;
   font-size: 14px;
   background: #a32626;
-  border-radius: 5px 5px 5px 5px;
+  /*border-radius: 5px 5px 5px 5px;*/
   cursor: pointer;
+  display: flex;
 }
 
+cancel-button:hover {
+  background: #b33737;
+}
+
+.cancel-button a {
+  margin: auto;
+  text-decoration: none;
+  color: #fff;
+}
+
+
 /*----------------------NEW BOOK-------------------*/
+
+.add-book-box {
+  width: 260px;
+  margin: 0 auto;
+  padding: 20px 20px 20px 20px;
+  background: #eee;
+  border-bottom: 3px solid #ddd;
+}
 
 .description-form {
   height: 80px;
@@ -279,9 +344,9 @@ body {
   display: block;
   padding: 5px 10px 5px 10px;
   border-style: solid;
-  border: 2px solid #eee;
+  border: 1px solid #ddd;
   /*border-radius: 3px 3px 3px 3px;*/
-  background: #fff;
+  background: #efefef;
   /*background: rgba(255, 255, 255, 0.8);*/
   font-size: 14px;
   box-sizing: border-box;
@@ -289,6 +354,10 @@ body {
   outline-width: 2px;
   color: #666;
   resize: none;
+}
+
+.available-check {
+  text-align: center;
 }
 
 
@@ -299,8 +368,8 @@ body {
   height: auto;
   position: relative;
   display: flex;
-  background: #eee;
-  border-bottom: 2px solid #ddd;
+  background: #fff;
+  border: 1px solid #e9e9e9;
   margin: 10px auto 10px auto;
   padding: 5px 5px 5px 5px;
   box-sizing: border-box;
@@ -316,8 +385,9 @@ body {
   width: 80px;
   height: 80px;
   background: #fff;
-  border: 3px solid #ccc;
+  border: 2px solid #e9e9e9;
   margin: 15px 7px 10px 15px;
+  padding: 5px;
   overflow: hidden;
   float: left;
   box-sizing: border-box;
@@ -331,7 +401,7 @@ body {
 
 .profile-data-wrapper {
   padding: 0px 7px 0px 7px;
-  border-radius: 4px 4px 4px 4px;
+  /*border-radius: 4px 4px 4px 4px;*/
   margin-top: 15px;
   flex-grow: 1;
   float: left;
@@ -340,7 +410,6 @@ body {
 .profile-data-wrapper li:first-child {
   font-size: 16px;
   font-weight: bold;
-  /*border-bottom: 2px solid #ddd;*/
   margin-bottom: 7px;
 }
 
@@ -355,15 +424,13 @@ body {
   font-size: 14px;
   margin-top: 0px;
   padding-bottom: 3px;
-  /*border-bottom: 1px dashed #aaa;*/
   line-height: 13px;
 }
 
 .edit-profile-button {
   font-size: 14px;
-  border-top: 2px solid #777;
   text-decoration: none;
-  color: #7fc857;
+  color: #2d69b0;
   margin: 5px 0px 0px 10px;
   padding: 5px 0px 5px 0px;
 }
@@ -377,11 +444,11 @@ body {
 
 .books-navbar {
   width: 100%;
-  margin: 10px 0px 3px 0px;
-  padding: 2px 5px 2px 5px;
-  background: #eee;
-  border-bottom: 2px solid #ddd;
+  margin: 0px 0px 10px 0px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
   box-sizing: border-box;
+  display: flex;
 }
 
 .books-navbar:after {
@@ -394,12 +461,28 @@ body {
   text-decoration: none;
   padding: 10px 7px 10px 7px;
   box-sizing: border-box;
-  background: #eee;
+  background: #fff;
   font-size: 13px;
   color: #282828;
   display: block;
   float: left;
-  border-right: 2px solid #ddd;
+  border-right: 1px solid #e2e2e2;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.books-navbar p {
+  text-decoration: none;
+  padding: 10px 7px 10px 7px;
+  box-sizing: border-box;
+  background: #2d69b0;
+  font-size: 15px;
+  color: #fff;
+  display: block;
+  float: left;
+  border-right: 1px solid #e2e2e2;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .books-navbar a:last-child {
@@ -407,8 +490,8 @@ body {
 }
 
 .books-navbar a:hover {
-  background: #ededed;
-  color: #7fc857;
+  background: #2d69b0;
+  color: #fff;
 }
 
 /*---------------MY BOOKS INSIDE PROFILE---------------*/
@@ -416,19 +499,29 @@ body {
 .mybooks-wrapper {
   width: 100%;
   margin: 0px auto;
-  /*border-top: 2px solid #666;*/
-  padding-top: 10px;
+  border: 1px solid #e9e9e9;
+  padding: 10px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.mybooks-wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .mybooks {
   width: 150px;
   height: 260px;
-  margin: 5px 11px;;
-  background: #eee;
+  margin: 10px 8px;;
+  background: #f1f1f1;
   /*border-radius: 6px 6px 6px 6px;*/
-  box-sizing: border-box;
+  box-sizing:padding-box;
   float: left;
-  border-bottom: 3px solid #ddd;
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+  border-bottom: 2px solid #e2e2e2;
   display: flex;
   flex-direction: column;
 }
@@ -452,7 +545,7 @@ body {
 .cover-wrapper {
   width: 100%;
   height: 180px;
-  background: #eee;
+  background: #f1f1f1;
   float: left;
   box-sizing: border-box;
   overflow: hidden;
@@ -515,7 +608,7 @@ body {
 }
 
 .book-options a:first-child {
-  color: #333;
+  color: #2d69b0;
   margin-right: 5px;
   padding-right: 10px;
   border-right: 1px solid #aaa;
@@ -550,21 +643,79 @@ body {
   color: #777;
 }
 
-/*---------------EDIT BOOK VIEW---------------*/
-#cover {
-  text-align: center;
+
+
+.book-contact {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px 10px 7px 0px;
+  display: flex;
 }
 
-/*----------------------SHOW BOOK VIEW---------------------*/
-#showbook-text span {
-  font-weight: bold;
+.book-contact a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #2d69b0;
 }
-#showbook-cover {
-  display: block;
+
+.book-contact a:hover {
+  color: #777;
+}
+
+/*---------------EDIT BOOK---------------*/
+
+.edit-book-box {
+  width: 260px;
   margin: 0 auto;
-  height: 30%;
-  width: 30%;
-  margin-bottom: 1rem;
+  padding: 10px 20px 10px 20px;
+}
+
+.edit-book-box label {
+  display: block;
+  padding: 20px 0px 0px 0px;
+  color: #333;
+  font-size: 15px;
+  margin-left: -7px;
+}
+
+
+/*----------------------SHOW BOOK VIEW---------------------*/
+
+.show-book-wrapper {
+  width: 70%;
+  margin: 10px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+}
+
+.show-book-wrapper:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.show-image {
+  width: 200px;
+  float: left;
+}
+
+.show-image img {
+  width: 100%;
+}
+
+.book-specs {
+  padding-left: 25px;
+  float: left;
+}
+
+.book-specs h4 {
+  padding: 5px 0px 5px 0px;
+}
+
+.book-specs p {
+  font-size: 14px;
 }
 
 
@@ -592,13 +743,13 @@ color:inherit;
 
 /*----------------------AVAILABLE BOOKS VIEW---------------------*/
 .book-options {
-  color: #65779A;
+  color: #777;
   text-decoration: none;
   font-weight: bold;
 }
 
 .book-options:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 
@@ -641,13 +792,6 @@ color:inherit;
     height: 150px;
     margin: 15px 15px 20px 15px;
   }
-
-  .edit-profile-button {
-    border-top: 2px solid #777;
-  }
-  /*.edit-profile-button {
-    margin-left: 50px;
-  }*/
 
   .books-navbar a {
     text-decoration: none;
