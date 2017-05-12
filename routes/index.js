@@ -91,6 +91,7 @@ router.get('/:id/deletebook', (req, res, next) => {
   });
 });
 
+
 //Get Delete Profile
 
 router.get('/:id/deleteprofile', (req, res, next) => {
@@ -102,6 +103,7 @@ router.get('/:id/deleteprofile', (req, res, next) => {
     res.redirect('/login');
   });
 });
+
 
 
 //Get Delete Message from Inbox
@@ -127,5 +129,6 @@ router.get('/:id/deletemessage', (req, res, next) => {
     res.redirect('/sentmessages');
   });
 });
+
 
 module.exports = router;
