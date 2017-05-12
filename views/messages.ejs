@@ -12,7 +12,7 @@
     <div class="messages">
       <div class="messages-list">
         <ul>
-          <li> <span>Message from: </span> <a href="/sendmessagetosender"><%= message.sender.name %></a></li>
+          <li> <span>Message from: </span> <a href="/sendmessagetosender/<%= message._id %>"><%= message.sender.name %></a></li>
           <li> <span>Book: </span> <%= message.book.title %></li>
           <li> <span>Subject: </span> <%= message.subject %></li>
           <li> <span> Message: </span> <%= message.body %></li>

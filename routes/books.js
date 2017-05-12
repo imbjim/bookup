@@ -21,8 +21,6 @@ router.get('/add-book', auth.isAuthenticated, (req, res, next) => { //added by e
 // Post Add Book
 
 router.post('/newbook',  auth.isAuthenticated, upload.single('cover'), (req, res, next) => {// added by Imre
-  // console.log(req.body.pages)
-  // console.log("this is picture", req.body.picture);
 
   var file;
 
@@ -46,7 +44,6 @@ router.post('/newbook',  auth.isAuthenticated, upload.single('cover'), (req, res
 // picture: 'uploads/' + req.file.filename,
 
   const newBook = new Book(bookInfo);
-  console.log("despues de newBook", newBook);
   newBook.save( (err) => {
     if (err) {
       next(err);
@@ -99,7 +96,6 @@ router.post('/:id', upload.single('cover'), (req, res, next) => {// added by Imr
   };
 
   //becareful with this part from here ----------------
-  console.log(bookInfo);
 
   Book.findByIdAndUpdate(req.params.id, bookInfo, (err, book) => {
 

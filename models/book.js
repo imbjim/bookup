@@ -12,7 +12,8 @@ const bookSchema = new Schema({
   picture: String,
   available: Boolean,
   owner: { type: Schema.Types.ObjectId, ref: 'User' },
-  current_user: { type: Schema.Types.ObjectId, ref: 'User' }
+  current_user: { type: Schema.Types.ObjectId, ref: 'User' },
+  messages: [{ type: Schema.Types.ObjectId, ref: 'Message' }]
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
