@@ -13,7 +13,8 @@
 
           <input type="text" class="basic-form" name="subject"  placeholder="subject">
           <input type="text" class="description-form" name="body"  placeholder="body">
-          
+          <input type="hidden" class="description-form"  name="bookId" value="<%= message.book._id %>" >
+          <input type="hidden" class="description-form" name="receiverId" value="<%= message.sender._id %>" >
           <button type="submit" class="send-button">Send</button>
         </div>
     </form>
